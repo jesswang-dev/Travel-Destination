@@ -1,0 +1,64 @@
+@import "common";
+
+body {
+    height: 3000px;
+}
+section.hero {
+    //need to add filter
+    background-image: url(../images/greece.jpg);
+    background-size: cover;
+    height: 100vh;
+}
+nav.header {
+    height: 80px;
+    width: 100vw;
+    position: fixed;
+    display: grid;
+    grid-template-columns: 80px 150px auto 250px;
+
+    & .menu-btn {
+        grid-column-start: 1;
+        width: 80px;
+        background-color: white;
+        text-align: center;
+        & .material-symbols-outlined {
+            line-height: 80px;
+        }
+    }
+
+    & .nav-header {
+        grid-column-start: 2;
+        justify-self: center;
+        align-self: center;
+
+
+    }
+
+    & .navigation {
+        grid-column-start: 3;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        list-style-type: none;
+        column-gap: 20px;
+
+    }
+
+    & .option-btn {
+        grid-column-start: 4;
+        justify-self: start;
+        align-self: center;
+    }
+
+
+}
+
+div.header-scroll {
+    height:80px;
+    width: 100%;
+    text-align: center;
+    position: fixed;
+    top: -80px;
+    background-color: white;
+
+}

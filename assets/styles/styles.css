@@ -1,0 +1,60 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+a {
+  text-decoration: none;
+}
+li {
+  text-decoration: none;
+}
+body {
+  height: 3000px;
+}
+section.hero {
+  background-image: url(../images/greece.jpg);
+  background-size: cover;
+  height: 100vh;
+}
+nav.header {
+  height: 80px;
+  width: 100vw;
+  position: fixed;
+  display: grid;
+  grid-template-columns: 80px 150px auto 250px;
+}
+nav.header .menu-btn {
+  grid-column-start: 1;
+  width: 80px;
+  background-color: white;
+  text-align: center;
+}
+nav.header .menu-btn .material-symbols-outlined {
+  line-height: 80px;
+}
+nav.header .nav-header {
+  grid-column-start: 2;
+  justify-self: center;
+  align-self: center;
+}
+nav.header .navigation {
+  grid-column-start: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+  column-gap: 20px;
+}
+nav.header .option-btn {
+  grid-column-start: 4;
+  justify-self: start;
+  align-self: center;
+}
+div.header-scroll {
+  height: 80px;
+  width: 100%;
+  text-align: center;
+  position: fixed;
+  top: -80px;
+  background-color: white;
+}
