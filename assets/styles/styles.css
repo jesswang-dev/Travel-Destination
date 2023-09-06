@@ -8,13 +8,23 @@ a {
 li {
   text-decoration: none;
 }
+.subtitle {
+  font-size: 11px;
+  line-height: 1.4em;
+  font-weight: 400;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
 body {
   height: 3000px;
+  font-family: 'Inter', serif;
+  color: #ffffff;
 }
 section.hero {
   background-image: url(../images/greece.jpg);
   background-size: cover;
   height: 100vh;
+  z-index: -999;
 }
 nav.header {
   height: 80px;
@@ -22,15 +32,17 @@ nav.header {
   position: fixed;
   display: grid;
   grid-template-columns: 80px 150px auto 250px;
+  z-index: 999;
 }
 nav.header .menu-btn {
   grid-column-start: 1;
   width: 80px;
-  background-color: white;
+  background-color: #ffffff;
   text-align: center;
 }
 nav.header .menu-btn .material-symbols-outlined {
   line-height: 80px;
+  color: black;
 }
 nav.header .nav-header {
   grid-column-start: 2;
@@ -44,11 +56,15 @@ nav.header .navigation {
   align-items: center;
   list-style-type: none;
   column-gap: 20px;
+  opacity: 0;
 }
 nav.header .option-btn {
   grid-column-start: 4;
   justify-self: start;
   align-self: center;
+  padding: 12px;
+  border: 1px solid white;
+  border-radius: 5px;
 }
 div.header-scroll {
   height: 80px;
@@ -57,4 +73,28 @@ div.header-scroll {
   position: fixed;
   top: -80px;
   background-color: white;
+  z-index: 0;
+}
+section.hero {
+  display: grid;
+  grid-template-rows: 80px auto 100px;
+  grid-template-columns: 80px 150px auto 250px;
+}
+section.hero nav.header {
+  grid-row-start: 1;
+  grid-column-start: 1;
+  grid-column-end: 5;
+}
+section.hero div.index-title {
+  grid-row-start: 2;
+  grid-column-start: 2;
+  grid-column-end: 5;
+  align-self: center;
+}
+section.hero div.options-slider {
+  grid-row-start: 3;
+  grid-column-start: 4;
+}
+.index-title h1 {
+  font-size: 54px;
 }
