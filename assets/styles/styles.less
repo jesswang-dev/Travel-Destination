@@ -32,13 +32,14 @@ nav.header {
   position: fixed;
   display: grid;
   grid-template-columns: 80px 150px auto 200px 150px;
-  z-index: 999;
+  z-index: 998;
 
   & .menu-btn {
     grid-column-start: 1;
     width: 80px;
     background-color: rgb(255, 255, 255);
     text-align: center;
+    cursor: pointer;
     & .material-symbols-outlined {
       line-height: 80px;
       color:black;
@@ -74,6 +75,7 @@ nav.header {
     padding: 12px;
     border: 1px solid @border-color;
     border-radius: 5px;
+    cursor: pointer;
     & .material-symbols-outlined {
         font-size: 12px;
         vertical-align: middle;
@@ -121,7 +123,7 @@ div.left-scroll {
 
 section.hero {
   display: grid;
-  grid-template-rows: 80px auto 20%;
+  grid-template-rows: 80px auto 20% 100px;
   grid-template-columns: 80px 150px auto 200px 150px;
 
   & nav.header {
@@ -144,8 +146,10 @@ section.hero {
     align-self: center;
   }
   & div.options-slider {
-    grid-row-start: 3;
-    grid-column-start: 4;
+    grid-row: 5 / 6;
+    grid-column: 4 / 6;
+    justify-self: stretch;
+    align-self:stretch;
   }
 
 
@@ -174,7 +178,8 @@ section.hero {
     color: black;
     border-radius: 15px;
     position: relative;
-    display: none;
+    opacity: 0;
+    transition: all 0.5s;
     .container {
         display: grid;
         grid-template-rows: 1fr 3fr 3fr;
@@ -216,4 +221,44 @@ section.hero {
         }
 
     }
+}
+
+.expand-menu {
+    width: 25vw;
+    height: 100vh;
+    background-color: white;
+    text-align: center;
+    color:black;
+    position:fixed;
+    left: -25vw;
+    z-index: 999;
+    transition: all 1s;
+    .exit-btn{
+            height: 80px;
+            width: 80px;
+            cursor: pointer;
+        & .material-symbols-outlined {
+            display: block;
+            line-height: 80px;
+            color:black;
+    }
+}
+
+    h2 {
+        color: black;
+    }
+
+    & .menu-container {
+        overflow: scroll;
+    }
+}
+
+.options-slider {
+    
+    .main {
+        background-color: white;
+        color: black;
+        display: flex;
+    }
+
 }

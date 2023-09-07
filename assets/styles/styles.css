@@ -36,13 +36,14 @@ nav.header {
   position: fixed;
   display: grid;
   grid-template-columns: 80px 150px auto 200px 150px;
-  z-index: 999;
+  z-index: 998;
 }
 nav.header .menu-btn {
   grid-column-start: 1;
   width: 80px;
   background-color: #ffffff;
   text-align: center;
+  cursor: pointer;
 }
 nav.header .menu-btn .material-symbols-outlined {
   line-height: 80px;
@@ -75,6 +76,7 @@ nav.header .option-btn {
   padding: 12px;
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 5px;
+  cursor: pointer;
 }
 nav.header .option-btn .material-symbols-outlined {
   font-size: 12px;
@@ -114,7 +116,7 @@ div.left-scroll .scroll-bar .movable {
 }
 section.hero {
   display: grid;
-  grid-template-rows: 80px auto 20%;
+  grid-template-rows: 80px auto 20% 100px;
   grid-template-columns: 80px 150px auto 200px 150px;
 }
 section.hero nav.header {
@@ -135,8 +137,10 @@ section.hero div.index-title {
   align-self: center;
 }
 section.hero div.options-slider {
-  grid-row-start: 3;
-  grid-column-start: 4;
+  grid-row: 5 / 6;
+  grid-column: 4 / 6;
+  justify-self: stretch;
+  align-self: stretch;
 }
 .index-title {
   width: 100%;
@@ -160,7 +164,8 @@ section.hero div.options-slider {
   color: black;
   border-radius: 15px;
   position: relative;
-  display: none;
+  opacity: 0;
+  transition: all 0.5s;
 }
 .expand .container {
   display: grid;
@@ -201,4 +206,36 @@ section.hero div.options-slider {
   margin-bottom: 10px;
   font-weight: 500;
   font-size: 18px;
+}
+.expand-menu {
+  width: 25vw;
+  height: 100vh;
+  background-color: white;
+  text-align: center;
+  color: black;
+  position: fixed;
+  left: -25vw;
+  z-index: 999;
+  transition: all 1s;
+}
+.expand-menu .exit-btn {
+  height: 80px;
+  width: 80px;
+  cursor: pointer;
+}
+.expand-menu .exit-btn .material-symbols-outlined {
+  display: block;
+  line-height: 80px;
+  color: black;
+}
+.expand-menu h2 {
+  color: black;
+}
+.expand-menu .menu-container {
+  overflow: scroll;
+}
+.options-slider .main {
+  background-color: white;
+  color: black;
+  display: flex;
 }
