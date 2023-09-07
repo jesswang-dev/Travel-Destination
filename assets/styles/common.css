@@ -4,7 +4,11 @@
 }
 a {
   text-decoration: none;
+  color: black;
 }
 li {
   text-decoration: none;
+}
+button {
+  border: none;
 }

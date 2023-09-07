@@ -1,31 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <nav class="header"></nav>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travel Site</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link rel="stylesheet" href="./assets/styles/styles.css" />
+  </head>
+  <body>
     <section class="hero">
-        <div class="leftScroll"></div>
-        <div class="index-title"></div>
-        <div class="videoLink"></div>
-        <div class="options"></div>
+      <nav class="header">
+        <div class="menu-btn">
+          <span class="material-symbols-outlined"> menu </span>
+        </div>
+        <div class="nav-header">CO<span>VILLA</span></div>
+        <ul class="navigation">
+          <li><a href="#">ABOUT</a></li>
+          <li><a href="#">JOURNAL</a></li>
+          <li><a href="#">SUPPORT</a></li>
+        </ul>
+        <div class="option-btn subtitle">
+          DESTINATIONS
+          <span class="material-symbols-outlined"> expand_more </span>
+        </div>
+      </nav>
+
+      <div class="expand">
+        <div class="container">
+          <div class="title">
+            <p class="subtitle">choose a location</p>
+            <div class="deco-line"></div>
+          </div>
+
+          <div class="location">
+            <a href="#">
+              <p class="loc-title">France</p>
+              <p class="subtitle">6 Vacations</p>
+            </a>
+          </div>
+          <div class="location">
+            <a href="#">
+              <p class="loc-title">Indonesia</p>
+              <p class="subtitle">6 Vacations</p>
+            </a>
+          </div>
+          <div class="location">
+            <a href="#">
+              <p class="loc-title">Greece</p>
+              <p class="subtitle">6 Vacations</p>
+            </a>
+          </div>
+          <div class="location">
+            <a href="#">
+              <p class="loc-title">Egypt</p>
+              <p class="subtitle">6 Vacations</p>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="header-scroll"></div>
+      <div class="left-scroll">
+        <div class="scroll-bar">
+          <div class="movable"></div>
+        </div>
+      </div>
+
+      <div class="index-title">
+        <div class="subtitle">FAMILY TRAVEL AGENCY</div>
+        <h1>
+          Let's plan your <br />
+          next vacation
+        </h1>
+        <a class="contact-us subtitle" href="#">CONTACT US</a>
+        <div class="video-button"></div>
+      </div>
+
+      <div class="options-slider">
+        <div class="subtitle">POPULAR LOCATION</div>
+        <div class="sliders-button">
+          <div class="slide-left"></div>
+          <div class="slide-right"></div>
+        </div>
+        <div class="location">
+          <p>Thessaloniki, Greece</p>
+          <div class="subtitle">STARTING AT $6700</div>
+        </div>
+      </div>
     </section>
 
     <section class="acrossWorld">
-        <div class="title"></div>
-        <div class="scrollable"></div>
+      <div class="title"></div>
+      <div class="scrollable"></div>
     </section>
 
     <section class="blog">
-        <div class="info-card"></div>
-        <div class="features"></div>
+      <div class="info-card"></div>
+      <div class="features"></div>
     </section>
 
     <section class="testimony">
-        <div class="feedback"></div>
+      <div class="feedback"></div>
     </section>
-</body>
+
+    <script src="./scrollScript.js"></script>
+    <script src="./clickScript.js"></script>
+  </body>
 </html>
