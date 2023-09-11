@@ -58,7 +58,6 @@ nav.header {
     align-self: center;
     font-size: @s-header-size;
     font-weight: 400;
-    // z-index: 997;
     span {
       font-weight: 700;
     }
@@ -73,7 +72,6 @@ nav.header {
     opacity: 0;
     font-size: @xxs-header-size;
     font-weight: 400;
-    // z-index: 997;
   }
 
   & .option-btn {
@@ -84,7 +82,6 @@ nav.header {
     border: 1px solid @border-color;
     border-radius: 5px;
     cursor: pointer;
-    // z-index: 999;
     & .material-symbols-outlined {
       font-size: 12px;
       vertical-align: middle;
@@ -99,7 +96,7 @@ div.header-scroll {
   position: fixed;
   top: -80px;
   background-color: white;
-  z-index: 998;
+  z-index:998;
 }
 
 div.left-scroll {
@@ -109,7 +106,7 @@ div.left-scroll {
   position: fixed;
   display: grid;
   grid-template-rows: 120px auto 120px;
-  z-index: 999;
+  z-index: 998;
   .scroll-bar {
     grid-row-start: 2;
     grid-row-end: 3;
@@ -124,6 +121,10 @@ div.left-scroll {
       background-color: white;
       border-radius: 2px;
     }
+  }
+
+  .social-account {
+    grid-row-start: 3;
   }
 }
 
@@ -180,9 +181,12 @@ section.hero {
   background-color: white;
   color: black;
   border-radius: 15px;
-  position: relative;
+  position: fixed;
+  top: 80px;
+  right: 100px;
   opacity: 0;
   transition: all 0.5s;
+  z-index: 999;
   .container {
     display: grid;
     grid-template-rows: 1fr 3fr 3fr;
@@ -371,7 +375,7 @@ section.blog {
   color: black;
   overflow: hidden;
   .blog-info {
-    height: 100vh;
+    height: 90vh;
     margin-left: 80px;
     margin-right: 80px;
     position: relative;

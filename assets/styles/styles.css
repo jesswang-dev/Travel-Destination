@@ -99,7 +99,7 @@ div.left-scroll {
   position: fixed;
   display: grid;
   grid-template-rows: 120px auto 120px;
-  z-index: 999;
+  z-index: 998;
 }
 div.left-scroll .scroll-bar {
   grid-row-start: 2;
@@ -115,6 +115,9 @@ div.left-scroll .scroll-bar .movable {
   height: 18%;
   background-color: white;
   border-radius: 2px;
+}
+div.left-scroll .social-account {
+  grid-row-start: 3;
 }
 section.hero {
   display: grid;
@@ -164,9 +167,12 @@ section.hero div.options-slider {
   background-color: white;
   color: black;
   border-radius: 15px;
-  position: relative;
+  position: fixed;
+  top: 80px;
+  right: 100px;
   opacity: 0;
   transition: all 0.5s;
+  z-index: 999;
 }
 .expand .container {
   display: grid;
@@ -337,7 +343,7 @@ section.blog {
   overflow: hidden;
 }
 section.blog .blog-info {
-  height: 100vh;
+  height: 90vh;
   margin-left: 80px;
   margin-right: 80px;
   position: relative;
