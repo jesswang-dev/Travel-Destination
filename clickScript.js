@@ -1,5 +1,4 @@
-//click on destination button
-import optionBtn from "./scrollScript.js";
+
 
 let clickCount = 0;
 
@@ -29,14 +28,15 @@ optionBtn.addEventListener('click', (e) => {
          }
     }
 
-})
+});
+
 const expandDisplay = document.querySelector(".expand");
 const menuBtn = document.querySelector(".menu-btn");
 const exitBtn = document.querySelector(".exit-btn");
 const menuDisplay = document.querySelector(".expand-menu");
 
 menuBtn.addEventListener('click', (e) => {
-
+  console.log(menuDisplay);
       if (e.target.tagName === "DIV") {
         menuDisplay.style.left = 0;
       }
@@ -45,11 +45,13 @@ menuBtn.addEventListener('click', (e) => {
       }
     
 });
-exitBtn.addEventListener('click', (e) => {
-    if (e.target.tagName === "DIV") {
-      menuDisplay.style.left = -25 + "vw";
-    }
-    if (e.target.tagName === "SPAN") {
-      menuDisplay.style.left = -25 + "vw";
-    }
-})
+
+exitBtn.addEventListener("click", (e) => {
+  if (e.target.tagName === "DIV") {
+    menuDisplay.style.left = -25 + "vw";
+  }
+  if (e.target.tagName === "SPAN") {
+    menuDisplay.style.left = -25 + "vw";
+  }
+});
+

@@ -21,13 +21,14 @@ button {
 }
 body {
   height: 3000px;
-  font-family: 'Inter', serif;
+  font-family: "Inter", serif;
   color: #ffffff;
 }
 section.hero {
   background-image: url(../images/greece.jpg);
   background-size: cover;
   height: 100vh;
+  transition: all 0.5s ease;
   z-index: -999;
 }
 nav.header {
@@ -36,7 +37,7 @@ nav.header {
   position: fixed;
   display: grid;
   grid-template-columns: 80px 150px auto 200px 150px;
-  z-index: 998;
+  z-index: 999;
 }
 nav.header .menu-btn {
   grid-column-start: 1;
@@ -89,7 +90,7 @@ div.header-scroll {
   position: fixed;
   top: -80px;
   background-color: white;
-  z-index: 0;
+  z-index: 998;
 }
 div.left-scroll {
   width: 79px;
@@ -98,26 +99,27 @@ div.left-scroll {
   position: fixed;
   display: grid;
   grid-template-rows: 120px auto 120px;
+  z-index: 999;
 }
 div.left-scroll .scroll-bar {
   grid-row-start: 2;
   grid-row-end: 3;
   justify-self: center;
   width: 3px;
-  height: 100%;
+  height: 80%;
   border-radius: 2px;
   background-color: rgba(255, 255, 255, 0.3);
 }
 div.left-scroll .scroll-bar .movable {
   width: 3px;
-  height: 20%;
+  height: 18%;
   background-color: white;
   border-radius: 2px;
 }
 section.hero {
   display: grid;
-  grid-template-rows: 80px auto 20% 100px;
-  grid-template-columns: 80px 150px auto 200px 150px;
+  grid-template-rows: 80px 20px auto 20px 80px;
+  grid-template-columns: 80px 150px auto 300px 150px;
 }
 section.hero nav.header {
   grid-row-start: 1;
@@ -131,20 +133,19 @@ section.hero div.expand {
   justify-self: end;
 }
 section.hero div.index-title {
-  grid-row-start: 2;
+  grid-row-start: 3;
   grid-column-start: 3;
   grid-column-end: 4;
   align-self: center;
 }
 section.hero div.options-slider {
-  grid-row: 5 / 6;
+  grid-row: 4 / 6;
   grid-column: 4 / 6;
   justify-self: stretch;
   align-self: stretch;
 }
 .index-title {
   width: 100%;
-  margin-bottom: 80px;
 }
 .index-title h1 {
   font-size: 64px;
@@ -234,8 +235,136 @@ section.hero div.options-slider {
 .expand-menu .menu-container {
   overflow: scroll;
 }
-.options-slider .main {
+div.options-slider .slide-main {
+  height: 100%;
   background-color: white;
   color: black;
+  text-align: center;
   display: flex;
+  align-items: center;
+}
+div.options-slider .slide-main .slide-button {
+  width: 37px;
+  cursor: pointer;
+}
+div.options-slider .slide-main .slide-button .material-symbols-outlinedss {
+  font-size: 16px;
+  display: block;
+  line-height: 36px;
+}
+div.options-slider .slide-main .location {
+  width: 40%;
+  height: 100%;
+  margin: auto;
+  vertical-align: middle;
+}
+section.acrossWorld {
+  height: 900px;
+  color: black;
+  background-color: white;
+  text-align: center;
+}
+section.acrossWorld .title {
+  margin-top: 15vh;
+  margin-bottom: 10vh;
+}
+section.acrossWorld .title h2 {
+  font-size: 48px;
+  font-weight: 650;
+  margin-top: 3vh;
+}
+.swiper {
+  width: 100%;
+  height: 500px;
+  overflow-y: visible;
+}
+.swiper-wrapper {
+  width: 100%;
+  height: 80%;
+}
+.swiper-slide {
+  position: relative;
+  transition: all 0.3s ease 0.3s;
+  cursor: pointer;
+}
+.swiper-slide img {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+.swiper-slide .titles {
+  position: absolute;
+  text-align: center;
+  color: white;
+  bottom: 20%;
+  left: 50%;
+  transform: translate(-50%);
+}
+.swiper-slide .titles .loc-title {
+  font-size: 26px;
+  font-weight: 650;
+  margin-top: 10px;
+}
+.swiper-slide.swiper-slide-active {
+  transform: scale(1.2);
+}
+.nav-buttons {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  display: flex;
+  gap: 15px;
+  transform: translate(-50%);
+  z-index: 10;
+}
+.nav-buttons .swiper-custom-nav {
+  height: 64px;
+  width: 64px;
+  border-radius: 50%;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+.nav-buttons .swiper-custom-nav .material-symbols-outlined {
+  font-size: 15px;
+  line-height: 64px;
+}
+section.blog {
+  width: 100%;
+  background-color: #f7f8fc;
+  color: black;
+  overflow: hidden;
+}
+section.blog .blog-info {
+  height: 90vh;
+  margin-left: 80px;
+  margin-right: 80px;
+  position: relative;
+  text-align: left;
+}
+section.blog .blog-info .blog-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  gap: 50px;
+  justify-content: space-around;
+  align-items: center;
+}
+section.blog .blog-info .blog-container .blog-left h2 {
+  font-size: 48px;
+  font-weight: 650;
+}
+section.blog .blog-info .blog-container .blog-left .option-btn {
+  width: 50%;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  border-radius: 8px;
+  color: #f7f8fc;
+  background-color: #3572ff;
+}
+section.blog .blog-info .blog-container .blog-left .option-btn .material-symbols-outlined {
+  font-size: 11px;
+  line-height: 11px;
 }

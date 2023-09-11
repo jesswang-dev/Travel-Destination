@@ -26,5 +26,3 @@ window.addEventListener("scroll", (e) => {
     }
   }
 });
-
-export default optionBtn;
