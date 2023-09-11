@@ -106,7 +106,6 @@ const exitBtn = document.querySelector(".exit-btn");
 const menuDisplay = document.querySelector(".expand-menu");
 
 menuBtn.addEventListener("click", (e) => {
-  console.log(menuDisplay);
   if (e.target.tagName === "DIV") {
     menuDisplay.style.left = 0;
   }
