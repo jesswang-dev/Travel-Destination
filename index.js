@@ -122,3 +122,5 @@ exitBtn.addEventListener("click", (e) => {
     menuDisplay.style.left = -25 + "vw";
   }
 });
+
+//location card 
