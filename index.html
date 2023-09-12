@@ -4,14 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Travel Site</title>
+    <!--Google Fonts -->
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Inter"
     />
+
+    <!--Google Icons -->
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
     />
+
+    <!-- Swiper CSS-->
+    <link rel="stylesheet" href="./assets/swiper/swiper-bundle.min.css" />
+
     <link rel="stylesheet" href="./assets/styles/styles.css" />
   </head>
   <body>
@@ -67,9 +74,106 @@
       </div>
 
       <div class="header-scroll"></div>
+
+      <div class="expand-menu">
+        <div class="exit-btn">
+          <span class="material-symbols-outlined"> close </span>
+        </div>
+        <h2>Explore Vacations</h2>
+        <div class="menu-container">
+          <div class="container">
+            <div class="title">
+              <p class="subtitle">choose a continent</p>
+              <div class="deco-line"></div>
+            </div>
+
+            <div class="location">
+              <a href="#">
+                <p class="loc-title">Asia</p>
+                <p class="subtitle">6 Vacations</p>
+              </a>
+            </div>
+            <div class="location">
+              <a href="#">
+                <p class="loc-title">Africa</p>
+                <p class="subtitle">6 Vacations</p>
+              </a>
+            </div>
+            <div class="location">
+              <a href="#">
+                <p class="loc-title">Europe</p>
+                <p class="subtitle">12 Vacations</p>
+              </a>
+            </div>
+          </div>
+
+          <div class="container">
+            <div class="title">
+              <p class="subtitle">choose a location</p>
+              <div class="deco-line"></div>
+            </div>
+
+            <div class="location">
+              <a href="#">
+                <p class="loc-title">France</p>
+                <p class="subtitle">6 Vacations</p>
+              </a>
+            </div>
+            <div class="location">
+              <a href="#">
+                <p class="loc-title">Indonesia</p>
+                <p class="subtitle">6 Vacations</p>
+              </a>
+            </div>
+            <div class="location">
+              <a href="#">
+                <p class="loc-title">Greece</p>
+                <p class="subtitle">6 Vacations</p>
+              </a>
+            </div>
+            <div class="location">
+              <a href="#">
+                <p class="loc-title">Egypt</p>
+                <p class="subtitle">6 Vacations</p>
+              </a>
+            </div>
+          </div>
+
+          <div class="container">
+            <div class="title">
+              <p class="subtitle">Contact us</p>
+              <div class="deco-line"></div>
+            </div>
+
+            <div class="contact">
+              <a href="#">
+                <p class="contact-text">Schedule a call</p>
+              </a>
+            </div>
+            <div class="contact">
+              <a href="#">
+                <p class="contact-text">info@template.com</p>
+              </a>
+            </div>
+            <div class="contact">
+              <a href="#">
+                <p class="contact-text">(555) 555-5555</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div class="left-scroll">
         <div class="scroll-bar">
           <div class="movable"></div>
+        </div>
+        <div class="social-account">
+          <ul>
+            <li>Insta</li>
+            <li>Facebook</li>
+            <li>LinkedIn</li>
+          </ul>
         </div>
       </div>
 
@@ -84,33 +188,181 @@
       </div>
 
       <div class="options-slider">
-        <div class="subtitle">POPULAR LOCATION</div>
-        <div class="sliders-button">
-          <div class="slide-left"></div>
-          <div class="slide-right"></div>
+        <div class="title">
+          <p class="subtitle">popular location</p>
+          <div class="deco-line"></div>
         </div>
-        <div class="location">
-          <p>Thessaloniki, Greece</p>
-          <div class="subtitle">STARTING AT $6700</div>
+
+        <div class="slide-main">
+          <div class="slide-button" id="slide-prev">
+            <span class="material-symbols-outlined"> arrow_back </span>
+          </div>
+          <div class="slide-button" id="slide-next">
+            <span class="material-symbols-outlined"> arrow_forward </span>
+          </div>
+          <div class="location">
+            <p>Thessaloniki, Greece</p>
+            <p class="subtitle">STARTING AT $6900</p>
+          </div>
+
+          <div class="direct-link">
+            <span class="material-symbols-outlined"> navigate_next </span>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="acrossWorld">
-      <div class="title"></div>
-      <div class="scrollable"></div>
+      <div class="title">
+        <p class="subtitle">covilla destinations</p>
+        <h2>Across the world</h2>
+      </div>
+
+      <div class="swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide">
+            <img src="./assets/images/indonesia.jpg" alt="Indonesia" />
+            <div class="titles">
+              <p class="subtitle">6 Vacations</p>
+              <p class="loc-title">Indonesia</p>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <img src="./assets/images/greece.jpg" alt="Greece" />
+            <div class="titles">
+              <p class="subtitle">6 Vacations</p>
+              <p class="loc-title">Greece</p>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <img src="./assets/images/egypt.jpg" alt="Egypt" />
+            <div class="titles">
+              <p class="subtitle">6 Vacations</p>
+              <p class="loc-title">Egypt</p>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <img src="./assets/images/france.jpg" alt="France" />
+            <div class="titles">
+              <p class="subtitle">6 Vacations</p>
+              <p class="loc-title">France</p>
+            </div>
+          </div>
+        </div>
+        <!--End of swiper wrapper-->
+
+        <!-- navigation buttons -->
+        <div class="nav-buttons">
+          <div class="swiper-custom-nav" id="nav-left">
+            <span class="material-symbols-outlined"> arrow_back </span>
+          </div>
+          <div class="swiper-custom-nav" id="nav-right">
+            <span class="material-symbols-outlined"> arrow_forward </span>
+          </div>
+        </div>
+      </div>
+      <!--End of swiper-->
     </section>
 
     <section class="blog">
-      <div class="info-card"></div>
-      <div class="features"></div>
+      <div class="blog-info">
+        <div class="blog-container">
+          <div class="blog-left">
+            <p class="subtitle">covilla destinations</p>
+            <h2>Take your family to the best vacation</h2>
+            <p>
+              Donec sed auctor orci. In a nisl vel nisi egestas efficitur nec ac
+              neque. Sed vitae sollicitudin elit, ac tristique nisi.
+              Pellentesque rutrum egestas massa lacinia volutpat. Integer et
+              facilisis elit, vitae.
+            </p>
+            <div class="option-btn subtitle">
+              CHOOSE A DESTINATION
+              <span class="material-symbols-outlined"> expand_more </span>
+            </div>
+          </div>
+
+          <div class="blog-right">
+            <img
+              src="./assets/images/greece-size-small.jpg"
+              alt="greece pic small"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="features">
+        <div class="title">
+          <p class="subtitle">popular location</p>
+          <div class="deco-line"></div>
+        </div>
+
+        <div class="feature-container">
+          <ul>
+            <li>Feature1</li>
+            <li>Feature2</li>
+            <li>Feature3</li>
+            <li>Feature4</li>
+          </ul>
+        </div>
+      </div>
     </section>
 
     <section class="testimony">
-      <div class="feedback"></div>
+      <div class="testimony-container">
+        <div class="swiper-2">
+          <div class="swiper-wrapper">
+            <!--Slides-->
+            <div class="swiper-slide"></div>
+            <div class="swiper-slide"></div>
+            <div class="swiper-slide"></div>
+            <div class="swiper-slide"></div>
+            <div class="swiper-slide"></div>
+
+            <!--Pagination-->
+            <div class="pagination"></div>
+            <!--end of pagination div-->
+
+            <!--Navigation Buttons-->
+            <div class="nav-buttons">
+              <div class="swiper-custom-nav" id="nav-left">
+                <span class="material-symbols-outlined"> arrow_back </span>
+              </div>
+              <div class="swiper-custom-nav" id="nav-right">
+                <span class="material-symbols-outlined"> arrow_forward </span>
+              </div>
+            </div>
+            <!--end of pagination navigation div-->
+          </div>
+          <!--end of swiper wrapper-->
+        </div>
+        <!--end of swiper-2-->
+      </div>
     </section>
 
-    <script src="./scrollScript.js"></script>
-    <script src="./clickScript.js"></script>
+    <script src="./index.js"></script>
+
+    <!--Swiper JS-->
+    <script src="./assets/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper-->
+    <script>
+      const swiper = new Swiper(".swiper", {
+        // Optional parameters
+        slidesPerView: 2,
+        spaceBetween: 100,
+        centeredSlides: true,
+        loadPrevNext: true,
+        loop: true,
+
+        // Navigation arrows
+        navigation: {
+          nextEl: "#nav-right",
+          prevEl: "#nav-left",
+        },
+      });
+    </script>
   </body>
 </html>
