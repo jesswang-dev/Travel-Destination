@@ -40,7 +40,6 @@ function changeElement(count) {
   slideContent.innerHTML = `<p>${indexPageData[index].cityCountry}</p>\n <p class="subtitle">${indexPageData[index].priceTag}</p>`;
 }
 
-
 //header scrolling effect
 const header = document.querySelector(".header-scroll");
 const logo = document.querySelector(".nav-header");
@@ -82,20 +81,20 @@ optionBtn.addEventListener("click", (e) => {
   if (clickCount % 2 === 1) {
     if (e.target.tagName === "DIV") {
       e.target.children[0].innerHTML = " expand_less ";
-      expandDisplay.style.opacity = 1;
+      expandDisplay.style.display = "block";
     }
     if (e.target.tagName === "SPAN") {
       e.target.innerHTML = " expand_less ";
-      expandDisplay.style.opacity = 1;
+      expandDisplay.style.display = "block";
     }
   } else {
     if (e.target.tagName === "DIV") {
       e.target.children[0].innerHTML = " expand_more ";
-      expandDisplay.style.opacity = 0;
+      expandDisplay.style.display = "none";
     }
     if (e.target.tagName === "SPAN") {
       e.target.innerHTML = " expand_more ";
-      expandDisplay.style.opacity = 0;
+      expandDisplay.style.display = "none";
     }
   }
 });
@@ -121,4 +120,43 @@ exitBtn.addEventListener("click", (e) => {
   if (e.target.tagName === "SPAN") {
     menuDisplay.style.left = -25 + "vw";
   }
+});
+
+//add background effect while mouseover location card in expand class
+const locationCard = document.querySelector(".expand");
+
+locationCard.addEventListener("mouseover", (e) => {
+  if (e.target.className === "location") {
+    const locData = e.target.dataset.loc;
+    switch (locData) {
+      case "france":
+        e.target.style.backgroundImage =
+          "url(assets/images/greece-size-small.jpg)";
+        e.target.classList.add("active");
+
+        break;
+      case "indonesia":
+        e.target.style.backgroundImage =
+          "url(assets/images/greece-size-small.jpg)";
+        e.target.classList.add("active");
+
+        break;
+      case "greece":
+        e.target.style.backgroundImage =
+          "url(assets/images/greece-size-small.jpg)";
+        e.target.classList.add("active");
+        break;
+      case "egypt":
+        e.target.style.backgroundImage =
+          "url(assets/images/greece-size-small.jpg)";
+        e.target.classList.add("active");
+        break;
+    }
+  }
+
+  locationCard.addEventListener("mouseout", (e) => {
+    console.log("getting here?");
+    e.target.style.backgroundImage = "";
+    e.target.classList.remove("active");
+  });
 });

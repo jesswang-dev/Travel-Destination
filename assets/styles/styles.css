@@ -170,16 +170,11 @@ section.hero div.options-slider {
   position: fixed;
   top: 80px;
   right: 100px;
-  opacity: 0;
+  display: none;
   transition: all 0.5s;
   z-index: 999;
 }
 .expand .container {
-  display: grid;
-  grid-template-rows: 1fr 3fr 3fr;
-  grid-template-columns: 1fr 1fr;
-  row-gap: 10px;
-  column-gap: 10px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -188,8 +183,6 @@ section.hero div.options-slider {
   height: 80%;
 }
 .expand .container .title {
-  grid-row: 1/2;
-  grid-column: 1/3;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -198,21 +191,42 @@ section.hero div.options-slider {
   width: 60%;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
-.expand .container .location {
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
-  justify-self: stretch;
-  align-self: stretch;
+.expand .container .location-card {
+  width: 100%;
+  height: 100%;
+  margin: auto;
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
 }
-.expand .container .location p {
-  margin-left: 18px;
+.expand .container .location-card .location {
+  width: 210px;
+  height: 100px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
-.expand .container .location .loc-title {
+.expand .container .location-card .location .title-box .loc-title {
   margin-bottom: 10px;
   font-weight: 500;
   font-size: 18px;
+}
+.expand .container .active {
+  background-size: cover;
+  background-position: center;
+  transform: scale(15px);
+}
+.expand .container .active .title-box {
+  color: #f7f8fc;
+}
+.expand .container .active .material-symbols-outlined {
+  color: #f7f8fc;
+  visibility: visible;
 }
 .expand-menu {
   width: 25vw;
