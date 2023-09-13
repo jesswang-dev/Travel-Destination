@@ -152,11 +152,16 @@ locationCard.addEventListener("mouseover", (e) => {
         e.target.classList.add("active");
         break;
     }
-  }
 
-  locationCard.addEventListener("mouseout", (e) => {
-    console.log("getting here?");
-    e.target.style.backgroundImage = "";
-    e.target.classList.remove("active");
-  });
+    e.target.addEventListener("mouseleave", () => {
+          e.target.style.backgroundImage = "";
+          e.target.classList.remove("active");
+    })
+  }
 });
+
+const videoBtn = document.querySelector(".video-button");
+const video= document.querySelector("video");
+videoBtn.addEventListener('mouseenter', () => {
+  video.classList.add("active");
+})
