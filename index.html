@@ -202,20 +202,24 @@
         </div>
 
         <div class="video-section">
-          <div class="video-wrapper">
-            <video
-              playsinline
-              autoplay
-              muted
-              loop
-              poster="./assets/video/poster.jpg"
-            >
-              <source src="./assets/video/video.mp4" type="video/mp4" />
-            </video>
-          </div>
+          <div class="video-section-light">
+            <div class="video-wrapper">
+              <video
+                playsinline
+                autoplay
+                muted
+                loop
+                poster="./assets/video/poster.jpg"
+              >
+                <source src="./assets/video/video.mp4" type="video/mp4" />
+              </video>
+            </div>
 
-          <div class="video-button">
-            <span class="material-symbols-outlined"> play_circle </span>
+            <div class="video-button">
+              <div class="video-button-inner">
+                <img src="./assets/video/play.svg" alt="play button" />
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -305,7 +309,7 @@
           <div class="blog-left">
             <p class="subtitle">covilla destinations</p>
             <h2>Take your family to the best vacation</h2>
-            <p>
+            <p class="text">
               Donec sed auctor orci. In a nisl vel nisi egestas efficitur nec ac
               neque. Sed vitae sollicitudin elit, ac tristique nisi.
               Pellentesque rutrum egestas massa lacinia volutpat. Integer et
@@ -328,50 +332,129 @@
 
       <div class="features">
         <div class="title">
-          <p class="subtitle">popular location</p>
+          <p class="subtitle">Why choose us?</p>
           <div class="deco-line"></div>
         </div>
 
         <div class="feature-container">
-          <ul>
-            <li>Feature1</li>
-            <li>Feature2</li>
-            <li>Feature3</li>
-            <li>Feature4</li>
-          </ul>
+          <div class="feature">
+            <div class="feature-icon">
+              <span class="material-symbols-outlined"> travel_explore </span>
+            </div>
+            <h4>Hands-on planning</h4>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
+              sollicitudin eget velit.
+            </p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">
+              <span class="material-symbols-outlined">
+                volunteer_activism
+              </span>
+            </div>
+            <h4>Added value & perks</h4>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
+              sollicitudin eget velit.
+            </p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">
+              <span class="material-symbols-outlined"> loyalty </span>
+            </div>
+            <h4>Access best deals</h4>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
+              sollicitudin eget velit.
+            </p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">
+              <span class="material-symbols-outlined"> tactic </span>
+            </div>
+            <h4>Personalized</h4>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
+              sollicitudin eget velit.
+            </p>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="testimony">
-      <div class="testimony-container">
-        <div class="swiper-2">
-          <div class="swiper-wrapper">
-            <!--Slides-->
-            <div class="swiper-slide"></div>
-            <div class="swiper-slide"></div>
-            <div class="swiper-slide"></div>
-            <div class="swiper-slide"></div>
-            <div class="swiper-slide"></div>
-
-            <!--Pagination-->
-            <div class="pagination"></div>
-            <!--end of pagination div-->
-
-            <!--Navigation Buttons-->
-            <div class="nav-buttons">
-              <div class="swiper-custom-nav" id="nav-left">
-                <span class="material-symbols-outlined"> arrow_back </span>
-              </div>
-              <div class="swiper-custom-nav" id="nav-right">
-                <span class="material-symbols-outlined"> arrow_forward </span>
-              </div>
-            </div>
-            <!--end of pagination navigation div-->
-          </div>
-          <!--end of swiper wrapper-->
+      <ul class="number-tab">
+        <li class="tab-item active">1</li>
+        <li class="tab-item">2</li>
+        <li class="tab-item">3</li>
+        <li class="tab-item">4</li>
+        <li class="tab-item">5</li>
+      </ul>
+      <div class="testimony-main">
+        <div class="testimony-text">
+          <p class="client-message">
+            Donec sed auctor orci. In a nisl vel nisi egestas efficitur nec ac
+            neque. Sed vitae sollicitudin elit, ac tristique nisi. Pellentesque
+            rutrum egestas massa lacinia volutpat. Integer et facilisis elit,
+            vitae lobortis enim.
+          </p>
+          <p class="client-name">Samantha Vohnhale</p>
         </div>
-        <!--end of swiper-2-->
+        <div class="nav-buttons">
+          <div class="swiper-custom-nav" id="tes-left">
+            <span class="material-symbols-outlined"> arrow_back </span>
+          </div>
+          <div class="swiper-custom-nav" id="tes-right">
+            <span class="material-symbols-outlined"> arrow_forward </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="popular-sites">
+      <div class="title">
+        <p class="subtitle">choose a location</p>
+        <div class="deco-line"></div>
+      </div>
+
+      <div class="popular-main">
+        <div class="clickBar"></div>
+        <div class="popular-country">
+          <div class="city-info">
+            <img src="" alt="" />
+            <h4>Bahariya Oasis</h4>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
+              sollicitudin eget velit.
+            </p>
+            <br />
+            <span>Rates from</span>
+            <button>DETAILS</button>
+          </div>
+          <div class="city-info">
+            <img src="" alt="" />
+            <h4>Sahl Hasheesh</h4>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
+              sollicitudin eget velit.
+            </p>
+            <br />
+            <span>Rates from</span>
+            <button>DETAILS</button>
+          </div>
+          <div class="city-info">
+            <img src="" alt="" />
+            <h4>Alexandria</h4>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
+              sollicitudin eget velit.
+            </p>
+            <br />
+            <span>Rates from</span>
+            <button>DETAILS</button>
+          </div>
+        </div>
       </div>
     </section>
 

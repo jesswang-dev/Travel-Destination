@@ -6,8 +6,8 @@ a {
   text-decoration: none;
   color: black;
 }
-li {
-  text-decoration: none;
+ul {
+  list-style-type: none;
 }
 button {
   border: none;
@@ -136,9 +136,9 @@ section.hero div.expand {
   justify-self: end;
 }
 section.hero div.index-title {
-  grid-row-start: 3;
+  grid-row: 3 / 5;
   grid-column-start: 3;
-  grid-column-end: 4;
+  grid-column-end: 6;
   align-self: center;
 }
 section.hero div.options-slider {
@@ -148,7 +148,9 @@ section.hero div.options-slider {
   align-self: stretch;
 }
 .index-title {
-  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  vertical-align: middle;
 }
 .index-title h1 {
   font-size: 64px;
@@ -166,46 +168,106 @@ section.hero div.options-slider {
   height: 450px;
   position: relative;
   border-radius: 50%;
-  background-color: #3572ff;
-  /*style for vedio button*/
+  transition: all 1s;
+  /*rings animation*/
 }
-.video-section .video-wrapper {
+.video-section .video-section-light {
   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 400px;
   height: 400px;
+  border-radius: 50%;
+  transition: all 1s;
+}
+.video-section .video-section-light .video-wrapper {
+  position: absolute;
+  width: 350px;
+  height: 350px;
   border-radius: 50%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.video-section .video-wrapper video {
+.video-section .video-section-light .video-wrapper video {
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 50%;
-  transform: scale(0.5, 0.5);
+  transform: scale(0.5);
   opacity: 0;
   transition: all 1s;
 }
-.video-section .video-wrapper video.active {
+.video-section .video-section-light .video-wrapper video.active {
   opacity: 1;
   transform: scale(1, 1);
 }
+.video-section .video-section-light.active {
+  opacity: 1;
+  background-color: #525a76;
+  animation: innerRingMove 1s infinite alternate;
+}
+.video-section .video-section.active {
+  opacity: 1;
+  background-color: #37415f;
+  animation: outerRingMove 1s infinite alternate;
+}
+@keyframes innerRingMove {
+  from {
+    width: 350px;
+    height: 350px;
+  }
+  to {
+    width: 400px;
+    height: 400px;
+  }
+}
+@keyframes outerRingMove {
+  from {
+    width: 400px;
+    height: 400px;
+  }
+  to {
+    width: 450px;
+    height: 450px;
+  }
+}
 .video-section .video-button {
   position: absolute;
-  width: 150px;
-  height: 150px;
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
-  border: 2px dotted #f7f8fc;
+  border: 1px dashed rgba(255, 255, 255, 0.3);
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  text-align: center;
 }
-.video-section .video-button .material-symbols-outlined {
-  font-size: 72px;
-  font-weight: 100;
-  line-height: 150px;
+.video-section .video-button .video-button-inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.video-section .video-button .video-button-inner img {
+  width: 20%;
+  height: 20%;
+}
+.video-button.active {
+  background-color: #f7f8fc;
+  border: none;
+  transform: translate(-50%, -50%) scale(0.8);
+}
+.video-button.active .video-button-inner {
+  background-color: #081c3a;
 }
 .expand {
   width: 500px;
@@ -402,7 +464,7 @@ section.blog {
 }
 section.blog .blog-info {
   height: 90vh;
-  margin-left: 80px;
+  margin-left: 160px;
   margin-right: 80px;
   position: relative;
   text-align: left;
@@ -412,13 +474,20 @@ section.blog .blog-info .blog-container {
   width: 100%;
   height: 100%;
   display: flex;
-  gap: 50px;
   justify-content: space-around;
   align-items: center;
+  gap: 70px;
 }
 section.blog .blog-info .blog-container .blog-left h2 {
   font-size: 48px;
   font-weight: 650;
+}
+section.blog .blog-info .blog-container .blog-left .text {
+  color: #516381;
+  font-size: 19px;
+  font-weight: 400;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 section.blog .blog-info .blog-container .blog-left .option-btn {
   width: 50%;
@@ -432,4 +501,102 @@ section.blog .blog-info .blog-container .blog-left .option-btn {
 section.blog .blog-info .blog-container .blog-left .option-btn .material-symbols-outlined {
   font-size: 11px;
   line-height: 11px;
+}
+section.blog .blog-info .blog-container .blog-right img {
+  width: 600px;
+  height: 400px;
+}
+section.blog .features {
+  height: 90vh;
+  margin-left: 160px;
+  margin-right: 80px;
+}
+section.blog .features .feature-container {
+  width: 100%;
+  height: 35%;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+}
+section.blog .features .feature-container .feature {
+  height: 100%;
+  width: 24%;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  padding-left: 30px;
+  padding-right: 30px;
+}
+section.blog .features .feature-container .feature .feature-icon {
+  margin-top: 30px;
+  margin-bottom: 50px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: #525a76;
+  background-color: #f7f8fc;
+  text-align: center;
+}
+section.blog .features .feature-container .feature .feature-icon .material-symbols-outlined {
+  font-size: 28px;
+  font-weight: 200;
+  line-height: 50px;
+}
+section.blog .features .feature-container .feature h4 {
+  font-size: 20px;
+  font-weight: 500;
+}
+section.blog .features .feature-container .feature p {
+  margin-top: 10px;
+  font-size: 15px;
+}
+.feature.active {
+  transform: scale(1.5);
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+section.testimony {
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 80px 100px auto 100px 80px;
+  grid-template-rows: 80px auto 80px;
+  background-image: url("../images/testimony-bkg.jpg");
+}
+section.testimony .number-tab {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  align-self: center;
+}
+section.testimony .testimony-main {
+  grid-column: 3 / 4;
+  grid-row: 2 / 3;
+  justify-self: center;
+  align-self: center;
+}
+.number-tab {
+  width: 50px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-content: center;
+  text-align: center;
+}
+.number-tab .tab-item {
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  transition: all 0.3s ease;
+}
+.number-tab .tab-item.active {
+  border-left: 2px solid white;
+}
+.testimony-main {
+  position: relative;
+  transition: all 0.3s ease;
+}
+.testimony-main .material-symbols-outlined {
+  color: black;
 }

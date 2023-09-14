@@ -154,14 +154,113 @@ locationCard.addEventListener("mouseover", (e) => {
     }
 
     e.target.addEventListener("mouseleave", () => {
-          e.target.style.backgroundImage = "";
-          e.target.classList.remove("active");
-    })
+      e.target.style.backgroundImage = "";
+      e.target.classList.remove("active");
+    });
   }
 });
 
+const outerRing = document.querySelector(".video-section");
+const innerRing = document.querySelector(".video-section-light");
 const videoBtn = document.querySelector(".video-button");
-const video= document.querySelector("video");
-videoBtn.addEventListener('mouseenter', () => {
+const videoBtnInner = document.querySelector(".video-button-inner");
+const video = document.querySelector("video");
+videoBtn.addEventListener("mouseenter", () => {
+  outerRing.classList.add("active");
+  innerRing.classList.add("active");
+  videoBtnInner.classList.add("active");
+  videoBtn.classList.add("active");
   video.classList.add("active");
-})
+});
+
+videoBtn.addEventListener("mouseleave", () => {
+  outerRing.classList.remove("active");
+  innerRing.classList.remove("active");
+  videoBtnInner.classList.remove("active");
+  videoBtn.classList.remove("active");
+  video.classList.remove("active");
+});
+
+const feature = document.querySelector(".feature-container");
+
+feature.addEventListener("mouseenter", (e) => {
+  e.target.classList.add("active");
+});
+
+feature.addEventListener("mouseleave", (e) => {
+  e.target.classList.remove("active");
+});
+
+const testimonyData = [
+  {
+    message:
+      "Donec sed auctor orci. In a nisl vel nisi egestas efficitur nec ac neque. Sed vitae sollicitudin elit, ac tristique nisi. Pellentesque rutrum egestas massa lacinia volutpat. Integer et facilisis elit, vitae lobortis enim.",
+    name: "Samantha Vohnhale",
+  },
+  {
+    message:
+      "Donec sed auctor orci. In a nisl vel nisi egestas efficitur nec ac neque. Sed vitae sollicitudin elit, ac tristique nisi. Pellentesque rutrum egestas massa lacinia volutpat. Integer et facilisis elit, vitae lobortis enim.",
+    name: "Wilson Tomales",
+  },
+  {
+    message:
+      "Donec sed auctor orci. In a nisl vel nisi egestas efficitur nec ac neque. Sed vitae sollicitudin elit, ac tristique nisi. Pellentesque rutrum egestas massa lacinia volutpat. Integer et facilisis elit, vitae lobortis enim.",
+    name: "Tammy Georgeon",
+  },
+  {
+    message:
+      "Donec sed auctor orci. In a nisl vel nisi egestas efficitur nec ac neque. Sed vitae sollicitudin elit, ac tristique nisi. Pellentesque rutrum egestas massa lacinia volutpat. Integer et facilisis elit, vitae lobortis enim.",
+    name: "Emily Camphon",
+  },
+  {
+    message:
+      "Donec sed auctor orci. In a nisl vel nisi egestas efficitur nec ac neque. Sed vitae sollicitudin elit, ac tristique nisi. Pellentesque rutrum egestas massa lacinia volutpat. Integer et facilisis elit, vitae lobortis enim.",
+    name: "Cassie Shamath",
+  },
+];
+
+const tesBtnLeft = document.querySelector("#tes-left");
+const tesBtnRight = document.querySelector("#tes-right");
+const testimony = document.querySelector(".testimony-text");
+const numberTab = document.querySelectorAll(".tab-item");
+
+console.log(numberTab);
+
+tesBtnLeft.addEventListener("click", () => {
+  let current;
+  for (let i = 0; i < 5; i++) {
+    if (numberTab[i].classList.length === 2) {
+      current = i;
+      break;
+    }
+  }
+
+  let next = current - 1;
+  if (next < 0) {
+    next = 4;
+  }
+  numberTab[current].classList.remove("active");
+  numberTab[next].classList.add("active");
+
+  testimony.children[0].innerHTML = testimonyData[next].message;
+  testimony.children[1].innerHTML = testimonyData[next].name;
+});
+
+tesBtnRight.addEventListener("click", () => {
+  let current;
+  for (let i = 0; i < 5; i++) {
+    if (numberTab[i].classList.length === 2) {
+      current = i;
+      break;
+    }
+  }
+
+  let next = current + 1;
+  if (next > 4) {
+    next = 0;
+  }
+  numberTab[current].classList.remove("active");
+  numberTab[next].classList.add("active");
+  testimony.children[0].innerHTML = testimonyData[next].message;
+  testimony.children[1].innerHTML = testimonyData[next].name;
+});
