@@ -594,9 +594,226 @@ section.testimony .testimony-main {
   border-left: 2px solid white;
 }
 .testimony-main {
+  height: 300px;
   position: relative;
   transition: all 0.3s ease;
+  text-align: center;
+  display: grid;
+  grid-template-columns: 20% auto 20%;
+}
+.testimony-main .testimony-text {
+  grid-column: 2/3;
+  font-size: 20px;
+}
+.testimony-main .testimony-text .client-name {
+  margin-top: 23px;
+  font-size: 23px;
+  font-weight: 500;
 }
 .testimony-main .material-symbols-outlined {
   color: black;
+}
+section.popular-sites {
+  height: 100vh;
+  color: black;
+}
+section.popular-sites .popular-main {
+  height: 80vh;
+  margin-left: 100px;
+  margin-right: 80px;
+  border: 1px solid red;
+}
+section.popular-sites .title {
+  margin-left: 100px;
+  margin-right: 80px;
+}
+.click-bar {
+  height: 100px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.click-bar .the-bar {
+  width: 90%;
+  height: 2px;
+  margin: 0 auto;
+  background-image: linear-gradient(to right, black 0 25%, red 25% 100%);
+}
+.click-bar ul.tab-dots {
+  position: absolute;
+  width: 90%;
+  height: 100%;
+  left: 5%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.click-bar ul.tab-dots .tab-dot {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  border: 2px solid black;
+  background-color: white;
+  position: relative;
+  opacity: 0;
+  z-index: 9;
+  cursor: pointer;
+}
+.click-bar ul.tab-dots .tab-dot.active {
+  opacity: 1;
+  animation: expand 0.8s;
+}
+@keyframes expand {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+.click-bar ul.inner-dots {
+  position: absolute;
+  width: 90%;
+  height: 100%;
+  left: 5%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.click-bar ul.inner-dots .dot {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 10;
+}
+.click-bar ul.inner-dots .dot.active {
+  background-color: black;
+}
+.popular-country {
+  width: 90%;
+  margin: 0 auto;
+}
+.popular-country .page {
+  display: none;
+}
+.popular-country .page.active {
+  display: flex;
+  justify-content: space-around;
+}
+.popular-country .city-info {
+  width: 350px;
+  height: 500px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  position: relative;
+  transition: all 1s ease-in-out;
+}
+.popular-country .city-info .card-container {
+  position: absolute;
+  width: 95%;
+  height: 95%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.popular-country .city-info .card-container .img {
+  width: 100%;
+  height: 50%;
+  background-image: url(../images/greece-size-small.jpg);
+  background-size: cover;
+}
+section.detailed-info {
+  height: 100vh;
+  overflow: scroll;
+}
+section.detailed-info .step-card {
+  position: relative;
+  width: 600px;
+  height: 1461px;
+  border-left: 3px solid #ccc;
+  padding-left: 48px;
+  float: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+section.detailed-info .step-card .step {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  left: -24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 1s;
+}
+section.detailed-info .step-card .step .outer {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  transition: all 1s;
+}
+section.detailed-info .step-card .step:first-child {
+  top: 50px;
+}
+section.detailed-info .step-card .step:nth-child(2) {
+  top: 430px;
+}
+section.detailed-info .step-card .step:nth-child(3) {
+  top: 800px;
+}
+section.detailed-info .step-card .step:nth-child(4) {
+  top: 1200px;
+}
+section.detailed-info .step-card .step .inner {
+  position: absolute;
+  top: 200px;
+  width: 18px;
+  height: 18px;
+  background-color: #6c6a6a;
+  border-radius: 50%;
+  transition: all 1s;
+}
+section.detailed-info .box {
+  width: 544px;
+  height: 320px;
+  border: 1px solid #000;
+  opacity: 0;
+  transform: rotateZ(-30deg);
+  transition: all 3s;
+  transform-origin: 300px 50px;
+  position: relative;
+  top: 400px;
+}
+section.detailed-info .box.active {
+  opacity: 1;
+  top: 0px;
+  transform: rotateZ(0deg);
+}
+.outer.active {
+  transform: scale(2.5, 2.5);
+}
+.step-card .step .inner.active {
+  top: 15px;
+}
+section.aboutGallery .gallery {
+  display: flex;
+  height: 480px;
+  margin-left: -720px;
+  transition: all 5s;
+}
+section.aboutGallery .item {
+  flex-shrink: 0;
+  width: 480px;
+  height: 100%;
+  align-items: fit;
+}
+section.aboutGallery img {
+  width: 100%;
+  height: 100%;
 }
