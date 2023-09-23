@@ -22,15 +22,17 @@
 }
 
 body {
-  height: 3000px;
   font-family: "Inter", serif;
   color: rgb(255, 255, 255);
 }
+
 section.hero {
   //need to add filter
   background-image: url(../images/greece.jpg);
   background-size: cover;
   height: 100vh;
+  width: 100vw;
+  overflow: hidden;
   transition: all 0.5s ease;
   z-index: -999;
 }
@@ -131,42 +133,15 @@ div.left-scroll {
   }
 }
 
-section.hero {
-  display: grid;
-  grid-template-rows: 80px 20px auto 20px 80px;
-  grid-template-columns: 80px 150px auto 300px 150px;
-
-  & nav.header {
-    grid-row-start: 1;
-    grid-column-start: 1;
-    grid-column-end: 5;
-  }
-
-  & div.expand {
-    grid-row-start: 2;
-    grid-column-start: 3;
-    grid-column-end: 5;
-    justify-self: end;
-  }
-
-  & div.index-title {
-    grid-row: 3 / 5;
-    grid-column-start: 3;
-    grid-column-end: 6;
-    align-self: center;
-  }
-  & div.options-slider {
-    grid-row: 4 / 6;
-    grid-column: 4 / 6;
-    justify-self: stretch;
-    align-self: stretch;
-  }
-}
-
 .index-title {
+  position: absolute;
+  left: 150px;
+  top: 50%;
+  transform: translateY(-50%);
   display: flex;
-  justify-content: space-around;
-  vertical-align: middle;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 300px;
   h1 {
     font-size: @xxl-header-size;
   }
@@ -177,16 +152,16 @@ section.hero {
     background-color: white;
     border-radius: 5px;
     margin-top: 2em;
+    cursor: pointer;
   }
 }
 
 .video-section {
-  width: 450px;
-  height: 450px;
-  position: relative;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   transition: all 1s;
-
+  position: relative;
   .video-section-light {
     position: absolute;
     top: 50%;
@@ -372,13 +347,13 @@ section.hero {
 }
 
 .expand-menu {
-  width: 25vw;
+  width: 30vw;
   height: 100vh;
   background-color: white;
-  text-align: center;
   color: black;
   position: fixed;
-  left: -25vw;
+  text-align: center;
+  left: -30vw;
   z-index: 999;
   transition: all 1s;
   .exit-btn {
@@ -395,41 +370,82 @@ section.hero {
 
   h2 {
     color: black;
+    font-size: 30px;
+    font-weight: 650;
+    margin-bottom: 30px;
+    margin-top: 30px;
   }
 
   & .menu-container {
-    overflow: scroll;
+    height: 70%;
+    position: absolute;
+    left: 80px;
+    overflow-y: scroll;
+    .container {
+      text-align: left;
+
+      .location {
+        height: 90px;
+        width: 20vw;
+        border: 1px solid @border-color-bl;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        cursor: pointer;
+        .loc-title {
+          font-size: 18px;
+          font-weight: 500;
+        }
+      }
+    }
   }
 }
 
 div.options-slider {
+  height: 150px;
+  width: 400px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
   .slide-main {
+    border-radius: 10px 0 0 0;
     height: 100%;
     background-color: white;
     color: black;
     text-align: center;
     display: flex;
     align-items: center;
+    justify-content: space-around;
 
     .slide-button {
-      width: 37px;
+      width: 60px;
+      height: 100%;
       cursor: pointer;
-      .material-symbols-outlinedss {
-        font-size: 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      .material-symbols-outlined {
+        font-size: 28px;
+        font-weight: 200;
         display: block;
-        line-height: 36px;
+        line-height: 28px;
       }
     }
 
-    .location {
-      width: 40%;
-      height: 100%;
-      margin: auto;
-      vertical-align: middle;
+    .slide-main-location {
+      font-weight: 600;
+      font-size: @main-text-size;
+      background-size: cover;
+    }
+
+    .direct-link {
+      .material-symbols-outlined {
+      font-size: 28px;
+      font-weight: 200;
+      line-height: 28px;
+      }
     }
   }
 }
-
 section.acrossWorld {
   height: 900px;
   color: black;
@@ -777,7 +793,6 @@ section.popular-sites {
 
   .page {
     display: none;
-
   }
 
   .page.active {
@@ -813,7 +828,6 @@ section.detailed-info {
   height: 100vh;
   overflow: scroll;
 
-
   .step-card {
     position: relative;
     width: 600px;
@@ -825,102 +839,98 @@ section.detailed-info {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    
 
     .step {
-        position: absolute;
-        width: 48px;
-        height: 48px;
-        left: -24px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+      position: absolute;
+      width: 48px;
+      height: 48px;
+      left: -24px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: all 1s;
+
+      .outer {
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        border: 1px solid #ddd;
+        background-color: #fff;
         transition: all 1s;
+      }
 
-        .outer {
-            width: 18px;
-            height: 18px;
-            border-radius: 50%;
-            border: 1px solid #ddd;
-            background-color: #fff;
-            transition: all 1s;
-        }
+      &:first-child {
+        top: 50px;
+      }
 
-        &:first-child {
-            top: 50px;
-        }
+      &:nth-child(2) {
+        top: 430px;
+      }
 
-        &:nth-child(2) {
-            top: 430px;
-        }
+      &:nth-child(3) {
+        top: 800px;
+      }
 
-        &:nth-child(3) {
-            top: 800px;
-        }
+      &:nth-child(4) {
+        top: 1200px;
+      }
 
-        &:nth-child(4) {
-            top: 1200px;
-        }
-
-        .inner {
-            position: absolute;
-            top: 200px;
-            width: 18px;
-            height: 18px;
-            background-color: #6c6a6a;
-            border-radius: 50%;
-            transition: all 1s;
-        }
+      .inner {
+        position: absolute;
+        top: 200px;
+        width: 18px;
+        height: 18px;
+        background-color: #6c6a6a;
+        border-radius: 50%;
+        transition: all 1s;
+      }
     }
-
   }
 
-  
-    .box {
-        width: 544px;
-        height: 320px;
-        border: 1px solid #000;
-        opacity: 0;
-        transform: rotateZ(-30deg);
-        transition: all 3s;
-        transform-origin: 300px 50px;
-        position: relative;
-        top: 400px;
-    }
+  .box {
+    width: 544px;
+    height: 320px;
+    border: 1px solid #000;
+    opacity: 0;
+    transform: rotateZ(-30deg);
+    transition: all 3s;
+    transform-origin: 300px 50px;
+    position: relative;
+    top: 400px;
+  }
 
-    .box.active {
-        opacity: 1;
-        top: 0px;
-        transform: rotateZ(0deg);
-    }
-
+  .box.active {
+    opacity: 1;
+    top: 0px;
+    transform: rotateZ(0deg);
+  }
 }
 
 .outer.active {
-    transform: scale(2.5, 2.5);
+  transform: scale(2.5, 2.5);
 }
 
 .step-card .step .inner.active {
-    top: 15px;
+  top: 15px;
 }
 
 section.aboutGallery {
- .gallery {
-            display: flex;
-            height: 480px;
-            margin-left: -720px;
-            transition: all 5s;
-        }
+  .gallery {
+    display: flex;
+    height: 480px;
+    margin-left: -720px;
+    transition: all 5s;
+  }
 
-        .item {
-            flex-shrink: 0;
-            width: 480px;
-            height: 100%;
-            align-items: fit;
-        }
+  .item {
+    flex-shrink: 0;
+    width: 480px;
+    height: 100%;
+    align-items: fit;
+  }
 
-        img {
-            width: 100%;
-            height: 100%;
-        }
+  img {
+    width: 100%;
+    height: 100%;
+  }
 }

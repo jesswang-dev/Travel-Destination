@@ -20,7 +20,6 @@ button {
   text-transform: uppercase;
 }
 body {
-  height: 3000px;
   font-family: "Inter", serif;
   color: #ffffff;
 }
@@ -28,6 +27,8 @@ section.hero {
   background-image: url(../images/greece.jpg);
   background-size: cover;
   height: 100vh;
+  width: 100vw;
+  overflow: hidden;
   transition: all 0.5s ease;
   z-index: -999;
 }
@@ -119,38 +120,15 @@ div.left-scroll .scroll-bar .movable {
 div.left-scroll .social-account {
   grid-row-start: 3;
 }
-section.hero {
-  display: grid;
-  grid-template-rows: 80px 20px auto 20px 80px;
-  grid-template-columns: 80px 150px auto 300px 150px;
-}
-section.hero nav.header {
-  grid-row-start: 1;
-  grid-column-start: 1;
-  grid-column-end: 5;
-}
-section.hero div.expand {
-  grid-row-start: 2;
-  grid-column-start: 3;
-  grid-column-end: 5;
-  justify-self: end;
-}
-section.hero div.index-title {
-  grid-row: 3 / 5;
-  grid-column-start: 3;
-  grid-column-end: 6;
-  align-self: center;
-}
-section.hero div.options-slider {
-  grid-row: 4 / 6;
-  grid-column: 4 / 6;
-  justify-self: stretch;
-  align-self: stretch;
-}
 .index-title {
+  position: absolute;
+  left: 150px;
+  top: 50%;
+  transform: translateY(-50%);
   display: flex;
-  justify-content: space-around;
-  vertical-align: middle;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 300px;
 }
 .index-title h1 {
   font-size: 64px;
@@ -162,13 +140,14 @@ section.hero div.options-slider {
   background-color: white;
   border-radius: 5px;
   margin-top: 2em;
+  cursor: pointer;
 }
 .video-section {
-  width: 450px;
-  height: 450px;
-  position: relative;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   transition: all 1s;
+  position: relative;
   /*rings animation*/
 }
 .video-section .video-section-light {
@@ -335,13 +314,13 @@ section.hero div.options-slider {
   transform: scale(15px);
 }
 .expand-menu {
-  width: 25vw;
+  width: 30vw;
   height: 100vh;
   background-color: white;
-  text-align: center;
   color: black;
   position: fixed;
-  left: -25vw;
+  text-align: center;
+  left: -30vw;
   z-index: 999;
   transition: all 1s;
 }
@@ -357,32 +336,72 @@ section.hero div.options-slider {
 }
 .expand-menu h2 {
   color: black;
+  font-size: 30px;
+  font-weight: 650;
+  margin-bottom: 30px;
+  margin-top: 30px;
 }
 .expand-menu .menu-container {
-  overflow: scroll;
+  height: 70%;
+  position: absolute;
+  left: 80px;
+  overflow-y: scroll;
+}
+.expand-menu .menu-container .container {
+  text-align: left;
+}
+.expand-menu .menu-container .container .location {
+  height: 90px;
+  width: 20vw;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.expand-menu .menu-container .container .location .loc-title {
+  font-size: 18px;
+  font-weight: 500;
+}
+div.options-slider {
+  height: 150px;
+  width: 400px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
 }
 div.options-slider .slide-main {
+  border-radius: 10px 0 0 0;
   height: 100%;
   background-color: white;
   color: black;
   text-align: center;
   display: flex;
   align-items: center;
+  justify-content: space-around;
 }
 div.options-slider .slide-main .slide-button {
-  width: 37px;
-  cursor: pointer;
-}
-div.options-slider .slide-main .slide-button .material-symbols-outlinedss {
-  font-size: 16px;
-  display: block;
-  line-height: 36px;
-}
-div.options-slider .slide-main .location {
-  width: 40%;
+  width: 60px;
   height: 100%;
-  margin: auto;
-  vertical-align: middle;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+div.options-slider .slide-main .slide-button .material-symbols-outlined {
+  font-size: 28px;
+  font-weight: 200;
+  display: block;
+  line-height: 28px;
+}
+div.options-slider .slide-main .slide-main-location {
+  font-weight: 600;
+  font-size: 19px;
+  background-size: cover;
+}
+div.options-slider .slide-main .direct-link .material-symbols-outlined {
+  font-size: 28px;
+  font-weight: 200;
+  line-height: 28px;
 }
 section.acrossWorld {
   height: 900px;

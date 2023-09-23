@@ -18,9 +18,10 @@ const indexPageData = [
 ];
 
 let indexCount = 0;
-const nextBtn = document.querySelector("#slide-next");
-const prevBtn = document.querySelector("#slide-prev");
-const slideLocation = document.querySelector(".slide-main");
+const nextBtn = document.querySelector("#next");
+const prevBtn = document.querySelector("#prev");
+const slideLocation = document.querySelector(".slide-main-location");
+console.log(slideLocation.children);
 const bkg = document.querySelector(".hero");
 
 nextBtn.addEventListener("click", () => {
@@ -35,9 +36,10 @@ prevBtn.addEventListener("click", () => {
 
 function changeElement(count) {
   const index = Math.abs(count) % 3;
-  const slideContent = slideLocation.children[2];
+  const slideContent = slideLocation.children;
   bkg.style.backgroundImage = indexPageData[index].imgURL;
-  slideContent.innerHTML = `<p>${indexPageData[index].cityCountry}</p>\n <p class="subtitle">${indexPageData[index].priceTag}</p>`;
+  slideContent[0].innerHTML = `${indexPageData[index].cityCountry}`;
+  slideContent[1].innerHTML = `${indexPageData[index].priceTag}`;
 }
 
 //header scrolling effect
