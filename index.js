@@ -1,3 +1,5 @@
+
+
 //script to change index background
 const indexPageData = [
   {
@@ -65,6 +67,13 @@ window.addEventListener("scroll", (e) => {
     optionBtn.style.color = rgbVar;
     optionBtn.style.border = "1px solid " + rgbVar;
   }
+
+    if (n >= 400) {
+      hearder.style.top = 0;
+      navBar.style.opacity = 1;
+      optionBtn.style.color = "rgb(51,51,51)";
+      optionBtn.style.border = "1px solid rgb(51,51,51)";
+    }
 
   //effect for left scrolling bar
   const distance = leftScroll.offsetHeight - movable.offsetHeight;
@@ -395,7 +404,6 @@ popularCountryData.set(3, indonesiaData);
 popularCountryData.set(4, franceData);
 
 console.log(popularCountryData);
-
 const activeBar = document.querySelector(".the-bar");
 const tabDots = document.querySelector(".tab-dots");
 const innerDots = document.querySelector(".inner-dots");
@@ -403,7 +411,6 @@ const innerDotsList = document.querySelectorAll(".dot");
 const pageList = document.querySelectorAll(".page");
 const tabTitles = document.querySelectorAll(".tab-title");
 
-console.log(pageList);
 
 tabDots.addEventListener("click", (e) => {
   if (e.target.tagName === "LI") {
