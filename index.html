@@ -101,7 +101,7 @@
               <div class="deco-line"></div>
             </div>
 
-            <div class="location">
+            <div class="location" data-loc="asia">
               <div class="title-box">
                 <p class="loc-title">Asia</p>
                 <p class="subtitle">6 Vacations</p>
@@ -111,7 +111,7 @@
               </span>
             </div>
 
-            <div class="location">
+            <div class="location" data-loc="africa">
               <div class="title-box">
                 <p class="loc-title">Africa</p>
                 <p class="subtitle">6 Vacations</p>
@@ -121,7 +121,7 @@
               </span>
             </div>
 
-            <div class="location">
+            <div class="location" data-loc="europe">
               <div class="title-box">
                 <p class="loc-title">Europe</p>
                 <p class="subtitle">12 Vacations</p>
@@ -183,19 +183,22 @@
             </div>
 
             <div class="contact">
-              <a href="#">
-                <p class="contact-text">Schedule a call</p>
-              </a>
+              <p class="contact-text">Schedule a call</p>
+              <span class="material-symbols-outlined">
+                expand_circle_right
+              </span>
             </div>
             <div class="contact">
-              <a href="#">
-                <p class="contact-text">info@template.com</p>
-              </a>
+              <p class="contact-text">info@template.com</p>
+              <span class="material-symbols-outlined">
+                expand_circle_right
+              </span>
             </div>
             <div class="contact">
-              <a href="#">
-                <p class="contact-text">(555) 555-5555</p>
-              </a>
+              <p class="contact-text">(555) 555-5555</p>
+              <span class="material-symbols-outlined">
+                expand_circle_right
+              </span>
             </div>
           </div>
         </div>
@@ -285,28 +288,28 @@
         <div class="swiper-wrapper">
           <!-- Slides -->
           <div class="swiper-slide">
-            <img src="./assets/images/indonesia.jpg" alt="Indonesia" />
+            <img src="./assets/images/swiper-images/swiper-indonesia.jpg" alt="Indonesia" />
             <div class="titles">
               <p class="subtitle">6 Vacations</p>
               <p class="loc-title">Indonesia</p>
             </div>
           </div>
           <div class="swiper-slide">
-            <img src="./assets/images/greece.jpg" alt="Greece" />
+            <img src="./assets/images/swiper-images/swiper-greece.jpg" alt="Greece" />
             <div class="titles">
               <p class="subtitle">6 Vacations</p>
               <p class="loc-title">Greece</p>
             </div>
           </div>
           <div class="swiper-slide">
-            <img src="./assets/images/egypt.jpg" alt="Egypt" />
+            <img src="./assets/images/swiper-images/swiper-egypt.jpg" alt="Egypt" />
             <div class="titles">
               <p class="subtitle">6 Vacations</p>
               <p class="loc-title">Egypt</p>
             </div>
           </div>
           <div class="swiper-slide">
-            <img src="./assets/images/france.jpg" alt="France" />
+            <img src="./assets/images/swiper-images/swiper-france.jpg" alt="France" />
             <div class="titles">
               <p class="subtitle">6 Vacations</p>
               <p class="loc-title">France</p>
@@ -348,8 +351,8 @@
 
           <div class="blog-right">
             <img
-              src="./assets/images/greece-size-small.jpg"
-              alt="greece pic small"
+              src="./assets/images/blog-greece.jpg"
+              alt="greece"
             />
           </div>
         </div>
@@ -444,6 +447,12 @@
       </div>
 
       <div class="popular-main">
+        <ul class="tab-titles">
+          <li class="tab-title active" data-index="1">Egypt</li>
+          <li class="tab-title" data-index="2">Greece</li>
+          <li class="tab-title" data-index="3">Indonesia</li>
+          <li class="tab-title" data-index="4">France</li>
+        </ul>
         <div class="click-bar">
           <div class="the-bar"></div>
 
@@ -464,7 +473,7 @@
           <div class="page active" data-index="1">
             <div class="city-info">
               <div class="card-container">
-                <div class="img"></div>
+                <img src="./assets/images/small-images/eg-BahariyaOasis.jpg" alt="Bahariya Oasis">
                 <h4>Bahariya Oasis</h4>
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
@@ -477,7 +486,7 @@
             </div>
             <div class="city-info">
               <div class="card-container">
-                <div class="img"></div>
+                <img src="./assets/images/small-images/eg-SahlHasheesh.jpg" alt="Sahl Hasheesh">
                 <h4>Sahl Hasheesh</h4>
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
@@ -490,7 +499,7 @@
             </div>
             <div class="city-info">
               <div class="card-container">
-                <div class="img"></div>
+                <img src="./assets/images/small-images/eg-Alexandria.jpg" alt="Alexandria">
                 <h4>Alexandria</h4>
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
@@ -506,7 +515,7 @@
           <div class="page" data-index="2">
             <div class="city-info">
               <div class="card-container">
-                <div class="img"></div>
+                <img src="./assets/images/small-images/gr-Palaiokastritsa.jpg" alt="Palaiokastritsa">
                 <h4>Palaiokastritsa</h4>
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
@@ -519,7 +528,7 @@
             </div>
             <div class="city-info">
               <div class="card-container">
-                <div class="img"></div>
+                <img src="./assets/images/small-images/gr-Meteora.jpg" alt="Meteora">
                 <h4>Meteora</h4>
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
@@ -532,7 +541,7 @@
             </div>
             <div class="city-info">
               <div class="card-container">
-                <div class="img"></div>
+                <img src="./assets/images/small-images/gr-Thessaloniki.jpg" alt="Thessaloniki">
                 <h4>Thessaloniki</h4>
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
@@ -548,7 +557,7 @@
           <div class="page" data-index="3">
             <div class="city-info">
               <div class="card-container">
-                <div class="img"></div>
+                <img src="./assets/images/small-images/id-Canggu.jpg" alt="Canggu">
                 <h4>Canggu</h4>
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
@@ -561,7 +570,7 @@
             </div>
             <div class="city-info">
               <div class="card-container">
-                <div class="img"></div>
+                <img src="./assets/images/small-images/id-Komodo.jpg" alt="Komodo">
                 <h4>Komodo</h4>
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
@@ -574,7 +583,7 @@
             </div>
             <div class="city-info">
               <div class="card-container">
-                <div class="img"></div>
+                <img src="./assets/images/small-images/id-PenidaIsland.jpg" alt="Penida Island">
                 <h4>Penida Island</h4>
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
@@ -590,7 +599,7 @@
           <div class="page" data-index="4">
             <div class="city-info">
               <div class="card-container">
-                <div class="img"></div>
+                <img src="./assets/images/small-images/fr-Bonifacio.jpg" alt="Bonfifacio">
                 <h4>Bonifacio</h4>
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
@@ -603,7 +612,7 @@
             </div>
             <div class="city-info">
               <div class="card-container">
-                <div class="img"></div>
+                <img src="./assets/images/small-images/fr-Brittany.jpg" alt="Brittany">
                 <h4>Brittany</h4>
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
@@ -616,7 +625,7 @@
             </div>
             <div class="city-info">
               <div class="card-container">
-                <div class="img"></div>
+                <img src="./assets/images/small-images/fr-Carcassonne.jpg" alt="Carcassonne">
                 <h4>Carcassonne</h4>
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi

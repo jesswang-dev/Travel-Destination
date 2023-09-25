@@ -1,17 +1,17 @@
 //script to change index background
 const indexPageData = [
   {
-    imgURL: "url(./assets/images/greece.jpg)",
+    imgURL: "url(./assets/images/main-bkg-greece.jpg)",
     cityCountry: "Thessaloniki, Greece",
     priceTag: "STARTING AT $6700",
   },
   {
-    imgURL: "url(./assets/images/egypt.jpg)",
+    imgURL: "url(./assets/images/main-bkg-egypt.jpg)",
     cityCountry: "Bahariya Oasis, Egypt",
     priceTag: "STARTING AT $6400",
   },
   {
-    imgURL: "url(./assets/images/indonesia.jpg)",
+    imgURL: "url(./assets/images/main-bkg-indonesia.jpg)",
     cityCountry: "Denpasar, Indonesia",
     priceTag: "STARTING AT $3300",
   },
@@ -52,7 +52,9 @@ const movable = document.querySelector(".movable");
 
 window.addEventListener("scroll", (e) => {
   const n = document.documentElement.scrollTop;
+  
   // console.log(n);
+  //effect for nav bar while scrolling
   if (n < 400) {
     header.style.top = Math.ceil(n / 5) - 80 + "px";
     let color = Math.floor(51 * (400 / n));
@@ -62,12 +64,13 @@ window.addEventListener("scroll", (e) => {
     navBar.style.opacity = `${opacity}`;
     optionBtn.style.color = rgbVar;
     optionBtn.style.border = "1px solid " + rgbVar;
+  }
 
-    const distance = leftScroll.offsetHeight - movable.offsetHeight;
-    const view = document.body.offsetHeight - window.innerHeight;
-    if (n < view) {
-      movable.style.marginTop = (n / view) * distance + "px";
-    }
+  //effect for left scrolling bar
+  const distance = leftScroll.offsetHeight - movable.offsetHeight;
+  const view = document.body.offsetHeight - window.innerHeight;
+  if (n < view) {
+    movable.style.marginTop = (n / view) * distance + "px";
   }
 });
 
@@ -117,50 +120,74 @@ menuBtn.addEventListener("click", (e) => {
 
 exitBtn.addEventListener("click", (e) => {
   if (e.target.tagName === "DIV") {
-    menuDisplay.style.left = -25 + "vw";
+    menuDisplay.style.left = -30 + "vw";
   }
   if (e.target.tagName === "SPAN") {
-    menuDisplay.style.left = -25 + "vw";
+    menuDisplay.style.left = -30 + "vw";
   }
 });
 
 //add background effect while mouseover location card in expand class
-const locationCard = document.querySelector(".expand");
+const locationCard = document.querySelectorAll(".location");
+console.log(locationCard);
 
-locationCard.addEventListener("mouseover", (e) => {
-  if (e.target.className === "location") {
-    const locData = e.target.dataset.loc;
-    switch (locData) {
-      case "france":
-        e.target.style.backgroundImage =
-          "url(assets/images/greece-size-small.jpg)";
-        e.target.classList.add("active");
+for (let i = 0; i < locationCard.length; i++) {
+  locationCard[i].addEventListener("mouseover", (e) => {
+    if (e.target.className === "location") {
+      const locData = e.target.dataset.loc;
+      switch (locData) {
+        case "france":
+          e.target.style.backgroundImage =
+            "url(assets/images/small-images/fr-Bonifacio.jpg)";
+          e.target.classList.add("active");
 
-        break;
-      case "indonesia":
-        e.target.style.backgroundImage =
-          "url(assets/images/greece-size-small.jpg)";
-        e.target.classList.add("active");
+          break;
+        case "indonesia":
+          e.target.style.backgroundImage =
+            "url(assets/images/small-images/id-PenidaIsland.jpg)";
+          e.target.classList.add("active");
 
-        break;
-      case "greece":
-        e.target.style.backgroundImage =
-          "url(assets/images/greece-size-small.jpg)";
-        e.target.classList.add("active");
-        break;
-      case "egypt":
-        e.target.style.backgroundImage =
-          "url(assets/images/greece-size-small.jpg)";
-        e.target.classList.add("active");
-        break;
+          break;
+        case "greece":
+          e.target.style.backgroundImage =
+            "url(assets/images/small-images/gr-Thessaloniki.jpg)";
+          e.target.classList.add("active");
+          break;
+        case "egypt":
+          e.target.style.backgroundImage =
+            "url(assets/images/small-images/eg-SahlHasheesh.jpg)";
+          e.target.classList.add("active");
+
+          break;
+
+        case "asia":
+          e.target.style.backgroundImage =
+            "url(assets/images/small-images/id-PenidaIsland.jpg)";
+          e.target.classList.add("active");
+
+          break;
+        case "africa":
+          e.target.style.backgroundImage =
+            "url(assets/images/small-images/eg-SahlHasheesh.jpg)";
+          e.target.classList.add("active");
+
+          break;
+
+        case "europe":
+          e.target.style.backgroundImage =
+            "url(assets/images/small-images/fr-Bonifacio.jpg)";
+          e.target.classList.add("active");
+
+          break;
+      }
+
+      e.target.addEventListener("mouseleave", () => {
+        e.target.style.background = "";
+        e.target.classList.remove("active");
+      });
     }
-
-    e.target.addEventListener("mouseleave", () => {
-      e.target.style.backgroundImage = "";
-      e.target.classList.remove("active");
-    });
-  }
-});
+  });
+}
 
 const outerRing = document.querySelector(".video-section");
 const innerRing = document.querySelector(".video-section-light");
@@ -264,7 +291,6 @@ tesBtnRight.addEventListener("click", () => {
   testimony.children[0].innerHTML = testimonyData[next].message;
   testimony.children[1].innerHTML = testimonyData[next].name;
 });
-
 
 const popularCountryData = new Map();
 const egyptData = [
@@ -375,8 +401,9 @@ const tabDots = document.querySelector(".tab-dots");
 const innerDots = document.querySelector(".inner-dots");
 const innerDotsList = document.querySelectorAll(".dot");
 const pageList = document.querySelectorAll(".page");
+const tabTitles = document.querySelectorAll(".tab-title");
 
-console.log(pageList)
+console.log(pageList);
 
 tabDots.addEventListener("click", (e) => {
   if (e.target.tagName === "LI") {
@@ -384,12 +411,14 @@ tabDots.addEventListener("click", (e) => {
     const tabDotsList = tabDots.children;
 
     for (let i = 0; i < tabDotsList.length; i++) {
-        tabDotsList[i].classList.remove("active");
-        pageList[i].classList.remove("active");
+      tabDotsList[i].classList.remove("active");
+      pageList[i].classList.remove("active");
+      tabTitles[i].classList.remove("active");
     }
 
     e.target.classList.add("active");
     pageList[current - 1].classList.add("active");
+    tabTitles[current - 1].classList.add("active");
 
     for (let i = 0; i < innerDotsList.length; i++) {
       if (current && innerDotsList[i].dataset.index > current) {
@@ -401,26 +430,14 @@ tabDots.addEventListener("click", (e) => {
 
     activeBar.style.backgroundImage = changeBarBkgColor(current);
 
-    // const currentData = popularCountryData.get(current);
-    // console.log(currentData);
-    // for (let i = 0; i < cityInfoList.length; i++) {
-    //   const infoList = cityInfoList[i].children;
-    //   console.log(`info`,infoList);
-    //   infoList[0].style.backgroundImage = currentData[i].img;
-    //   infoList[1].innerHTML = currentData[i].city;
-    //   infoList[2].innerHTML = currentData[i].description;
-    //   infoList[4].innerHTML = `Rates from ${currentData[i].rate}`;
-    // }
-
   }
 });
 
 function changeBarBkgColor(eventIndex) {
   return `linear-gradient(to right, black 0 ${
     25 * eventIndex
-  }%, red ${eventIndex}% 100%)`;
+  }%, rgba(0, 0, 0, 0.1) ${eventIndex}% 100%)`;
 }
-
 
 const outers = document.querySelectorAll(".outer");
 const inners = document.querySelectorAll(".inner");
@@ -450,15 +467,14 @@ window.addEventListener("scroll", function (e) {
   }
 });
 
-
 const aboutBox = document.querySelector(".gallery");
 const lastBox = document.querySelector(".gallery .item:last-child");
 // console.log(lastBox.offsetLeft);
 // console.log(window.innerWidth);
 aboutBox.addEventListener("mousemove", function (e) {
-    if (e.clientX <= window.innerWidth / 2) {
-            aboutBox.style.marginLeft = "-80px";
-    } else {
-            aboutBox.style.marginLeft = "-900px";
-      }
+  if (e.clientX <= window.innerWidth / 2) {
+    aboutBox.style.marginLeft = "-80px";
+  } else {
+    aboutBox.style.marginLeft = "-900px";
+  }
 });

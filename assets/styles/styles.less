@@ -19,16 +19,20 @@
   font-weight: 400;
   letter-spacing: 3px;
   text-transform: uppercase;
+  margin-bottom: 1.4em;
 }
 
 body {
   font-family: "Inter", serif;
   color: rgb(255, 255, 255);
+  overflow-x: hidden;
 }
 
 section.hero {
   //need to add filter
-  background-image: url(../images/greece.jpg);
+  background: rgba(0, 0, 0, 0.5);
+  background-blend-mode: darken;
+  background-image: url(../images/main-bkg-greece.jpg);
   background-size: cover;
   height: 100vh;
   width: 100vw;
@@ -107,7 +111,7 @@ div.header-scroll {
 div.left-scroll {
   width: 79px;
   height: 100vh;
-  border-right: 1px solid @border-color;
+  border-right: 1px solid rgba(192,192,211, 0.2);
   position: fixed;
   display: grid;
   grid-template-rows: 120px auto 120px;
@@ -119,11 +123,11 @@ div.left-scroll {
     width: 3px;
     height: 80%;
     border-radius: 2px;
-    background-color: @border-color;
+    background-color: rgba(192,192,211, 0.2);
     .movable {
       width: 3px;
       height: 18%;
-      background-color: white;
+      background-color: #d2d2e0;
       border-radius: 2px;
     }
   }
@@ -334,14 +338,14 @@ div.left-scroll {
           color: white;
         }
       }
-    }
-
-    & .active {
+      & .active {
+      background: rgba(0, 0, 0, 0.5);
+      background-blend-mode: darken;
       background-size: cover;
       background-repeat: no-repeat;
-      background-position: center;
       color: #f7f8fc;
       transform: scale(15px);
+    }
     }
   }
 }
@@ -391,10 +395,49 @@ div.left-scroll {
         border-radius: 5px;
         margin-bottom: 10px;
         cursor: pointer;
-        .loc-title {
-          font-size: 18px;
-          font-weight: 500;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        transition: all 0.3s ease;
+        .title-box {
+          .loc-title {
+            font-size: @xs-header-size;
+            font-weight: 500;
+          }
         }
+        .material-symbols-outlined {
+          font-weight: 300;
+          color: white;
+        }
+      }
+
+      .location.active {
+            background: rgba(0, 0, 0, 0.5);
+      background-blend-mode: darken;
+      background-size: cover;
+      background-repeat: no-repeat;
+      color: #f7f8fc;
+      transform: scale(15px);
+      }
+
+      .contact {
+        height: 45px;
+        width: 20vw;
+        border: 1px solid @border-color-bl;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        .contact-text {
+          font-size: @xxs-header-size;
+        }
+      }
+
+      .material-symbols-outlined {
+        font-weight: 300;
       }
     }
   }
@@ -439,17 +482,17 @@ div.options-slider {
 
     .direct-link {
       .material-symbols-outlined {
-      font-size: 28px;
-      font-weight: 200;
-      line-height: 28px;
+        font-size: 28px;
+        font-weight: 200;
+        line-height: 28px;
       }
     }
   }
 }
 section.acrossWorld {
-  height: 900px;
+  height: 800px;
+  margin-left: 80px;
   color: black;
-  background-color: white;
   text-align: center;
 
   .title {
@@ -575,6 +618,7 @@ section.blog {
 
       .blog-right {
         img {
+          border-radius: 5px;
           width: 600px;
           height: 400px;
         }
@@ -644,6 +688,9 @@ section.testimony {
   grid-template-columns: 80px 100px auto 100px 80px;
   grid-template-rows: 80px auto 80px;
   background-image: url("../images/testimony-bkg.jpg");
+  background-color: rgba(0, 0, 0, 0.1);
+  background-blend-mode: darken;
+  background-size:cover;
 
   .number-tab {
     grid-column: 2 / 3;
@@ -703,19 +750,45 @@ section.testimony {
 }
 
 section.popular-sites {
+  transform: translateY(-100px);
   height: 100vh;
   color: black;
   .popular-main {
     height: 80vh;
     margin-left: 100px;
     margin-right: 80px;
-    border: 1px solid red;
+    border-radius: 5px;
+    background-color: white;
   }
   & .title {
     margin-left: 100px;
     margin-right: 80px;
   }
 }
+
+.tab-titles {
+  height: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 5px;
+  .tab-title {
+    height: 100%;
+    width: 22%;
+    font-size: 12px;
+    color:@text-color-grey;
+    line-height: 50px;
+    font-weight: 400;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  }
+  .tab-title.active {
+    color: black;
+  }
+}
+
 
 .click-bar {
   height: 100px;
@@ -727,7 +800,7 @@ section.popular-sites {
     width: 90%;
     height: 2px;
     margin: 0 auto;
-    background-image: linear-gradient(to right, black 0 25%, red 25% 100%);
+    background-image: linear-gradient(to right, black 0 25%, @border-color-bl 25% 100%);
   }
   ul.tab-dots {
     position: absolute;
@@ -814,10 +887,10 @@ section.popular-sites {
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      .img {
+      img {
         width: 100%;
         height: 50%;
-        background-image: url(../images/greece-size-small.jpg);
+        border-radius: 5px;
         background-size: cover;
       }
     }
