@@ -54,8 +54,16 @@ const movable = document.querySelector(".movable");
 
 window.addEventListener("scroll", (e) => {
   const n = document.documentElement.scrollTop;
-  
+
   // console.log(n);
+
+  //effect for left scrolling bar
+  const distance = leftScroll.offsetHeight - movable.offsetHeight;
+  const view = document.body.offsetHeight - window.innerHeight;
+  if (n < view) {
+    movable.style.marginTop = (n / view) * distance + "px";
+  }
+
   //effect for nav bar while scrolling
   if (n < 400) {
     header.style.top = Math.ceil(n / 5) - 80 + "px";
@@ -68,18 +76,11 @@ window.addEventListener("scroll", (e) => {
     optionBtn.style.border = "1px solid " + rgbVar;
   }
 
-    if (n >= 400) {
-      hearder.style.top = 0;
-      navBar.style.opacity = 1;
-      optionBtn.style.color = "rgb(51,51,51)";
-      optionBtn.style.border = "1px solid rgb(51,51,51)";
-    }
-
-  //effect for left scrolling bar
-  const distance = leftScroll.offsetHeight - movable.offsetHeight;
-  const view = document.body.offsetHeight - window.innerHeight;
-  if (n < view) {
-    movable.style.marginTop = (n / view) * distance + "px";
+  if (n >= 400) {
+    hearder.style.top = 0;
+    navBar.style.opacity = 1;
+    optionBtn.style.color = "rgb(51,51,51)";
+    optionBtn.style.border = "1px solid rgb(51,51,51)";
   }
 });
 
