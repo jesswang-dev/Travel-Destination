@@ -1055,8 +1055,8 @@ section.detailed-info {
     gap: 50px;
 
     .start-today-card {
-      height: 65vh;
-      width: 25vw;
+      height: 70vh;
+      width: 32vw;
       background-color: #f7f8fc;
       border-radius: 10px;
       border: 1px solid rgba(192, 192, 211, 0.2);
@@ -1291,14 +1291,13 @@ section.about-gallery {
 }
 
 section.meet-our-team {
-  height: 80vh;
+  height: 100vh;
   width: 100vw;
-  margin-left: 80px;
   color: #081c3a;
   background-color: #f7f8fc;
   .container {
     height: 100%;
-    width: 70%;
+    width: 80%;
     margin: auto;
     padding-top: 100px;
     .title {
@@ -1309,7 +1308,7 @@ section.meet-our-team {
       }
     }
     .team-box {
-      height: 55%;
+      height: 53%;
       width: 100%;
       margin: auto;
       background-color: #fff;
@@ -1320,22 +1319,21 @@ section.meet-our-team {
       .member-card {
         transition: all 0.5s ease;
         .my-hover-mixins();
-        height:100%;
+        height: 100%;
         width: 25%;
         position: relative;
         border-radius: 10px;
         .member {
           position: absolute;
-          height: 90%;
-          width: 90%;
-          top:50%;
-          left:50%;
+          height: 93%;
+          width: 85%;
+          top: 50%;
+          left: 50%;
           transform: translate(-50%, -50%);
-          margin-left: 30px;
 
           .member-image {
-            width: 80%;
             height: 80%;
+            width: 100%;
             img {
               width: 100%;
               height: 100%;
@@ -1344,15 +1342,15 @@ section.meet-our-team {
           }
 
           .member-name {
-            font-size: 22px;
+            font-size: 20px;
             font-weight: 500;
-            margin-top: 20px;
+            margin-top: 15px;
           }
 
           .member-location {
             color: #516381;
             font-size: 14px;
-            margin-top: 14px;
+            margin-top: 10px;
           }
         }
       }
@@ -1361,8 +1359,159 @@ section.meet-our-team {
 }
 
 section.article-post {
-  height: 70vh;
-  width: 80%;
+  height: 100vh;
+  max-width: 100vw;
   color: #081c3a;
-  margin: auto;
+  .container {
+    transform: translateY(-70px);
+    position: relative;
+    height: 100%;
+    max-width: 80%;
+    margin: auto;
+    background-color: #fff;
+    border-radius: 5px;
+    // border: 1px solid red;
+    .blog-container {
+      position: absolute;
+      height: 90%;
+      width: 92%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      // border: 1px solid blue;
+      display: flex;
+      gap: 50px;
+      .feature-post {
+        height: 100%;
+        width: 50%;
+        .feature-post-image {
+          height: 90%;
+          background-image: url(../images/blog-images/feature-post.jpg);
+          background-size: cover;
+          background-position: center;
+          border-radius: 10px;
+        }
+        .feature-post-brief {
+          transform: translateY(-80%) translateX(9%);
+          height: 35%;
+          width: 85%;
+          // border: 1px solid olivedrab;
+          background-color: #fff;
+          border-radius: 15px;
+          position: relative;
+          box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+          .post-date {
+            position: absolute;
+            top: -10px;
+            left: 5%;
+            font-size: 9px;
+            height: 20px;
+            width: 130px;
+            background-color: #f7f8fc;
+            text-align: center;
+            line-height: 20px;
+            border-radius: 5px;
+          }
+
+          .feature-box {
+            height: 90%;
+            width: 90%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            h2 {
+              font-size: 34px;
+              margin-top: 30px;
+              margin-bottom: 30px;
+            }
+
+            p {
+              font-size: 17px;
+              color: #516381;
+              line-height: 30px;
+              margin-bottom: 20px;
+            }
+            .option-btn {
+              width: 130px;
+              height: 40px;
+              border-radius: 5px;
+              border: 1px solid rgba(192, 192, 211, 0.2);
+              text-align: center;
+              line-height: 40px;
+              transition: all 0.5s ease;
+              cursor: pointer;
+            }
+            .option-btn:hover {
+              background-color: #000;
+              color: #fff;
+              transform: scale(1.05);
+            }
+          }
+        }
+      }
+
+      .popular-post {
+        height: 100%;
+        width: 50%;
+
+        .post-container {
+          width: 100%;
+          height: 90%;
+          // border: 1px solid plum;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          .post {
+            height: 150px;
+            width: 80%;
+            border-radius: 5px;
+            // border: 1px solid orangered;
+            position: relative;
+            transition: all 0.5s ease;
+            .post-box {
+              height: 98%;
+              width: 98%;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              // border: 1px solid greenyellow;
+              display: flex;
+              justify-content: flex-start;
+              align-items: center;
+              gap: 30px;
+              .post-image {
+                height: 140px;
+                width: 140px;
+                border-radius: 5px;
+                background-size: cover;
+                background-position: center;
+              }
+
+              .post-date {
+                font-size: 9px;
+                height: 20px;
+                width: 130px;
+                background-color: #f7f8fc;
+                text-align: center;
+                line-height: 20px;
+                border-radius: 5px;
+              }
+              h2 {
+                font-size: 18px;
+                font-weight: 400;
+              }
+            }
+          }
+          .post:hover {
+                       
+              transform: scale(1.05);
+              box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+          }
+        }
+      }
+    }
+  }
 }

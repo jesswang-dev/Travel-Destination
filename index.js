@@ -77,7 +77,7 @@ window.addEventListener("scroll", (e) => {
   }
 
   if (n >= 400) {
-    hearder.style.top = 0;
+    header.style.top = 0;
     navBar.style.opacity = 1;
     optionBtn.style.color = "rgb(51,51,51)";
     optionBtn.style.border = "1px solid rgb(51,51,51)";
@@ -452,7 +452,7 @@ const inners = document.querySelectorAll(".inner");
 const boxs = document.querySelectorAll(".box");
 window.addEventListener("scroll", function (e) {
   const scrollY = window.scrollY;
-  console.log(scrollY);
+  // console.log(scrollY);
   if (scrollY > 200) {
     boxs[0].classList.add("active");
     inners[0].classList.add("active");
@@ -486,3 +486,18 @@ aboutBox.addEventListener("mousemove", function (e) {
     aboutBox.style.marginLeft = "-900px";
   }
 });
+
+
+const postImages = document.querySelectorAll(".post-image");
+console.log(postImages);
+const postImageURL = [
+  { url: "url(./assets/images/blog-images/article1-image.jpg)" },
+  { url: "url(./assets/images/blog-images/article2-image.jpg)" },
+  { url: "url(./assets/images/blog-images/article3-image.jpg)" },
+  { url: "url(./assets/images/blog-images/article4-image.jpg)" },
+];
+window.addEventListener("load", () => {
+  for (let i = 0; i < postImages.length; i++) {
+    postImages[i].style.backgroundImage = postImageURL[i].url;
+  }
+})

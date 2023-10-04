@@ -951,8 +951,8 @@ section.detailed-info .container {
   gap: 50px;
 }
 section.detailed-info .container .start-today-card {
-  height: 65vh;
-  width: 25vw;
+  height: 70vh;
+  width: 32vw;
   background-color: #f7f8fc;
   border-radius: 10px;
   border: 1px solid rgba(192, 192, 211, 0.2);
@@ -1162,15 +1162,14 @@ section.about-gallery .container .gallery .item img {
   height: 100%;
 }
 section.meet-our-team {
-  height: 80vh;
+  height: 100vh;
   width: 100vw;
-  margin-left: 80px;
   color: #081c3a;
   background-color: #f7f8fc;
 }
 section.meet-our-team .container {
   height: 100%;
-  width: 70%;
+  width: 80%;
   margin: auto;
   padding-top: 100px;
 }
@@ -1180,7 +1179,7 @@ section.meet-our-team .container .title {
   margin-bottom: 30px;
 }
 section.meet-our-team .container .team-box {
-  height: 55%;
+  height: 53%;
   width: 100%;
   margin: auto;
   background-color: #fff;
@@ -1204,16 +1203,15 @@ section.meet-our-team .container .team-box .member-card:hover {
 }
 section.meet-our-team .container .team-box .member-card .member {
   position: absolute;
-  height: 90%;
-  width: 90%;
+  height: 93%;
+  width: 85%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  margin-left: 30px;
 }
 section.meet-our-team .container .team-box .member-card .member .member-image {
-  width: 80%;
   height: 80%;
+  width: 100%;
 }
 section.meet-our-team .container .team-box .member-card .member .member-image img {
   width: 100%;
@@ -1221,18 +1219,156 @@ section.meet-our-team .container .team-box .member-card .member .member-image im
   border-radius: 5px;
 }
 section.meet-our-team .container .team-box .member-card .member .member-name {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 500;
-  margin-top: 20px;
+  margin-top: 15px;
 }
 section.meet-our-team .container .team-box .member-card .member .member-location {
   color: #516381;
   font-size: 14px;
-  margin-top: 14px;
+  margin-top: 10px;
 }
 section.article-post {
-  height: 70vh;
-  width: 80%;
+  height: 100vh;
+  max-width: 100vw;
   color: #081c3a;
+}
+section.article-post .container {
+  transform: translateY(-70px);
+  position: relative;
+  height: 100%;
+  max-width: 80%;
   margin: auto;
+  background-color: #fff;
+  border-radius: 5px;
+}
+section.article-post .container .blog-container {
+  position: absolute;
+  height: 90%;
+  width: 92%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  gap: 50px;
+}
+section.article-post .container .blog-container .feature-post {
+  height: 100%;
+  width: 50%;
+}
+section.article-post .container .blog-container .feature-post .feature-post-image {
+  height: 90%;
+  background-image: url(../images/blog-images/feature-post.jpg);
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+}
+section.article-post .container .blog-container .feature-post .feature-post-brief {
+  transform: translateY(-80%) translateX(9%);
+  height: 35%;
+  width: 85%;
+  background-color: #fff;
+  border-radius: 15px;
+  position: relative;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+section.article-post .container .blog-container .feature-post .feature-post-brief .post-date {
+  position: absolute;
+  top: -10px;
+  left: 5%;
+  font-size: 9px;
+  height: 20px;
+  width: 130px;
+  background-color: #f7f8fc;
+  text-align: center;
+  line-height: 20px;
+  border-radius: 5px;
+}
+section.article-post .container .blog-container .feature-post .feature-post-brief .feature-box {
+  height: 90%;
+  width: 90%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+section.article-post .container .blog-container .feature-post .feature-post-brief .feature-box h2 {
+  font-size: 34px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+section.article-post .container .blog-container .feature-post .feature-post-brief .feature-box p {
+  font-size: 17px;
+  color: #516381;
+  line-height: 30px;
+  margin-bottom: 20px;
+}
+section.article-post .container .blog-container .feature-post .feature-post-brief .feature-box .option-btn {
+  width: 130px;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid rgba(192, 192, 211, 0.2);
+  text-align: center;
+  line-height: 40px;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+section.article-post .container .blog-container .feature-post .feature-post-brief .feature-box .option-btn:hover {
+  background-color: #000;
+  color: #fff;
+  transform: scale(1.05);
+}
+section.article-post .container .blog-container .popular-post {
+  height: 100%;
+  width: 50%;
+}
+section.article-post .container .blog-container .popular-post .post-container {
+  width: 100%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+section.article-post .container .blog-container .popular-post .post-container .post {
+  height: 150px;
+  width: 80%;
+  border-radius: 5px;
+  position: relative;
+  transition: all 0.5s ease;
+}
+section.article-post .container .blog-container .popular-post .post-container .post .post-box {
+  height: 98%;
+  width: 98%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 30px;
+}
+section.article-post .container .blog-container .popular-post .post-container .post .post-box .post-image {
+  height: 140px;
+  width: 140px;
+  border-radius: 5px;
+  background-size: cover;
+  background-position: center;
+}
+section.article-post .container .blog-container .popular-post .post-container .post .post-box .post-date {
+  font-size: 9px;
+  height: 20px;
+  width: 130px;
+  background-color: #f7f8fc;
+  text-align: center;
+  line-height: 20px;
+  border-radius: 5px;
+}
+section.article-post .container .blog-container .popular-post .post-container .post .post-box h2 {
+  font-size: 18px;
+  font-weight: 400;
+}
+section.article-post .container .blog-container .popular-post .post-container .post:hover {
+  transform: scale(1.05);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
