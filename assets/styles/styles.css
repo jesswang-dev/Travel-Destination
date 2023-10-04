@@ -148,7 +148,7 @@ div.left-scroll .social-account ul .social-icon img {
 }
 div.left-scroll .social-account ul .social-icon:hover {
   background-color: #3572ff;
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 .index-title {
   position: absolute;
@@ -712,7 +712,7 @@ section.popular-sites {
   transform: translateY(-120px);
   height: 70vh;
   width: 80%;
-  color: black;
+  color: #081c3a;
   margin: auto;
 }
 section.popular-sites .popular-main {
@@ -893,7 +893,8 @@ section.popular-sites .title {
 section.no-paddings {
   width: 95vw;
   margin-left: 80px;
-  height: 75vh;
+  margin-bottom: 100px;
+  height: 65vh;
   background: url(../images/main-bkg-indonesia.jpg) rgba(0, 0, 0, 0.5);
   background-size: cover;
   background-position: center;
@@ -936,20 +937,85 @@ section.no-paddings .titles .howitwork {
 }
 section.detailed-info {
   height: 100vh;
-  overflow: scroll;
+  width: 100vw;
+  color: #081c3a;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  margin-bottom: 100px;
 }
-section.detailed-info .step-card {
+section.detailed-info .container {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+section.detailed-info .container .start-today-card {
+  height: 65vh;
+  width: 25vw;
+  background-color: #f7f8fc;
+  border-radius: 10px;
+  border: 1px solid rgba(192, 192, 211, 0.2);
   position: relative;
-  width: 600px;
-  height: 1461px;
-  border-left: 3px solid #ccc;
+}
+section.detailed-info .container .start-today-card .card-container {
+  position: absolute;
+  width: 93%;
+  height: 95%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+section.detailed-info .container .start-today-card .card-container .card-picture {
+  width: 100%;
+  height: 35%;
+  border-radius: 5px;
+  background-image: url(../images/small-images/family.jpg);
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 30px;
+}
+section.detailed-info .container .start-today-card .card-container .card-text {
+  padding: 0 20px;
+}
+section.detailed-info .container .start-today-card .card-container .card-text h2 {
+  font-size: 34px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+section.detailed-info .container .start-today-card .card-container .card-text p.text {
+  font-size: 19px;
+  line-height: 30px;
+  color: #516381;
+  margin-bottom: 30px;
+}
+section.detailed-info .container .start-today-card .card-container .card-text .option-btn {
+  font-size: 10px;
+  width: 60%;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  border-radius: 5px;
+  color: #f7f8fc;
+  background-color: #3572ff;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+section.detailed-info .container .start-today-card .card-container .card-text .option-btn:hover {
+  background-color: #081c3a;
+  transform: scale(1.05);
+}
+section.detailed-info .container .step-card {
+  position: relative;
+  width: 40vw;
+  height: 160vh;
+  border-left: 2px solid rgba(192, 192, 211, 0.2);
   padding-left: 48px;
-  float: right;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-section.detailed-info .step-card .step {
+section.detailed-info .container .step-card .step {
   position: absolute;
   width: 48px;
   height: 48px;
@@ -959,27 +1025,27 @@ section.detailed-info .step-card .step {
   align-items: center;
   transition: all 1s;
 }
-section.detailed-info .step-card .step .outer {
+section.detailed-info .container .step-card .step .outer {
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  border: 1px solid #ddd;
+  border: 1px solid rgba(192, 192, 211, 0.2);
   background-color: #fff;
   transition: all 1s;
 }
-section.detailed-info .step-card .step:first-child {
-  top: 50px;
+section.detailed-info .container .step-card .step:first-child {
+  top: 30px;
 }
-section.detailed-info .step-card .step:nth-child(2) {
-  top: 430px;
+section.detailed-info .container .step-card .step:nth-child(2) {
+  top: 25%;
 }
-section.detailed-info .step-card .step:nth-child(3) {
-  top: 800px;
+section.detailed-info .container .step-card .step:nth-child(3) {
+  top: 50%;
 }
-section.detailed-info .step-card .step:nth-child(4) {
-  top: 1200px;
+section.detailed-info .container .step-card .step:nth-child(4) {
+  top: 100%;
 }
-section.detailed-info .step-card .step .inner {
+section.detailed-info .container .step-card .step .inner {
   position: absolute;
   top: 200px;
   width: 18px;
@@ -989,15 +1055,51 @@ section.detailed-info .step-card .step .inner {
   transition: all 1s;
 }
 section.detailed-info .box {
-  width: 544px;
-  height: 320px;
-  border: 1px solid #000;
+  width: 550px;
+  height: 300px;
+  border: 1px solid rgba(192, 192, 211, 0.2);
   opacity: 0;
   transform: rotateZ(-30deg);
-  transition: all 3s;
+  transition: all 2s;
   transform-origin: 300px 50px;
   position: relative;
   top: 400px;
+}
+section.detailed-info .box .box-container {
+  position: absolute;
+  width: 90%;
+  height: 80%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+section.detailed-info .box .box-container .box-icon {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border: 1px solid rgba(192, 192, 211, 0.2);
+  text-align: center;
+  background-color: #f7f8fc;
+  margin-bottom: 50px;
+}
+section.detailed-info .box .box-container .box-icon span {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 50px;
+  color: #516381;
+  font-weight: 700;
+}
+section.detailed-info .box .box-container h4 {
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+section.detailed-info .box .box-container p {
+  font-size: 18px;
+  line-height: 26px;
+  color: #516381;
 }
 section.detailed-info .box.active {
   opacity: 1;
@@ -1010,28 +1112,127 @@ section.detailed-info .box.active {
 .step-card .step .inner.active {
   top: 15px;
 }
-section.aboutGallery {
+section.about-gallery {
+  width: 100vw;
+  height: 90vh;
+}
+section.about-gallery .container {
   width: 95vw;
-  height: 150vh;
-  margin-left: 500px;
+  height: 100%;
+  margin-left: 80px;
 }
-section.aboutGallery .container .top-text {
+section.about-gallery .container .top-text {
   color: black;
+  background-color: #f7f8fc;
   width: 100%;
-  height: 50%;
+  height: 55%;
+  margin: auto;
+  position: relative;
 }
-section.aboutGallery .container .gallery {
+section.about-gallery .container .top-text .text-container {
+  width: 70%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
-  height: 480px;
+  justify-content: space-between;
+  gap: 100px;
+}
+section.about-gallery .container .top-text .text-container .left-text {
+  font-size: 34px;
+  font-weight: 650;
+}
+section.about-gallery .container .top-text .text-container .right-text {
+  font-size: 18px;
+}
+section.about-gallery .container .gallery {
+  display: flex;
+  height: 45%;
   transition: all 5s;
 }
-section.aboutGallery .container .item {
+section.about-gallery .container .gallery .item {
   flex-shrink: 0;
   width: 480px;
   height: 100%;
   align-items: fit;
 }
-section.aboutGallery .container img {
+section.about-gallery .container .gallery .item img {
   width: 100%;
+  height: 100%;
+}
+section.meet-our-team {
+  height: 80vh;
+  width: 100vw;
+  margin-left: 80px;
+  color: #081c3a;
+  background-color: #f7f8fc;
+}
+section.meet-our-team .container {
+  height: 100%;
+  width: 70%;
+  margin: auto;
+  padding-top: 100px;
+}
+section.meet-our-team .container .title {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+section.meet-our-team .container .team-box {
+  height: 55%;
+  width: 100%;
+  margin: auto;
+  background-color: #fff;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section.meet-our-team .container .team-box .member-card {
+  transition: all 0.5s ease;
+  height: 100%;
+  width: 25%;
+  position: relative;
+  border-radius: 10px;
+}
+section.meet-our-team .container .team-box .member-card:hover {
+  transform: scale(1.05);
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+section.meet-our-team .container .team-box .member-card .member {
+  position: absolute;
   height: 90%;
+  width: 90%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-left: 30px;
+}
+section.meet-our-team .container .team-box .member-card .member .member-image {
+  width: 80%;
+  height: 80%;
+}
+section.meet-our-team .container .team-box .member-card .member .member-image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+section.meet-our-team .container .team-box .member-card .member .member-name {
+  font-size: 22px;
+  font-weight: 500;
+  margin-top: 20px;
+}
+section.meet-our-team .container .team-box .member-card .member .member-location {
+  color: #516381;
+  font-size: 14px;
+  margin-top: 14px;
+}
+section.article-post {
+  height: 70vh;
+  width: 80%;
+  color: #081c3a;
+  margin: auto;
 }
