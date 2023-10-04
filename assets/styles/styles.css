@@ -1258,10 +1258,18 @@ section.article-post .container .blog-container .feature-post {
 }
 section.article-post .container .blog-container .feature-post .feature-post-image {
   height: 90%;
-  background-image: url(../images/blog-images/feature-post.jpg);
-  background-size: cover;
-  background-position: center;
+  width: 100%;
   border-radius: 10px;
+  overflow: hidden;
+}
+section.article-post .container .blog-container .feature-post .feature-post-image img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transition: all 0.5s ease;
+}
+section.article-post .container .blog-container .feature-post .feature-post-image img:hover {
+  transform: scale(1.1);
 }
 section.article-post .container .blog-container .feature-post .feature-post-brief {
   transform: translateY(-80%) translateX(9%);
@@ -1352,8 +1360,16 @@ section.article-post .container .blog-container .popular-post .post-container .p
   height: 140px;
   width: 140px;
   border-radius: 5px;
-  background-size: cover;
-  background-position: center;
+  overflow: hidden;
+}
+section.article-post .container .blog-container .popular-post .post-container .post .post-box .post-image img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transition: all 0.5s ease;
+}
+section.article-post .container .blog-container .popular-post .post-container .post .post-box .post-image img:hover {
+  transform: scale(1.1);
 }
 section.article-post .container .blog-container .popular-post .post-container .post .post-box .post-date {
   font-size: 9px;
@@ -1366,7 +1382,7 @@ section.article-post .container .blog-container .popular-post .post-container .p
 }
 section.article-post .container .blog-container .popular-post .post-container .post .post-box h2 {
   font-size: 18px;
-  font-weight: 400;
+  font-weight: 500;
 }
 section.article-post .container .blog-container .popular-post .post-container .post:hover {
   transform: scale(1.05);

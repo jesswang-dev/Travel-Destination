@@ -1386,11 +1386,20 @@ section.article-post {
         width: 50%;
         .feature-post-image {
           height: 90%;
-          background-image: url(../images/blog-images/feature-post.jpg);
-          background-size: cover;
-          background-position: center;
+          width: 100%;
           border-radius: 10px;
+          overflow: hidden;
+          img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            transition: all 0.5s ease;
+          }
+          img:hover {
+            transform: scale(1.1);
+          }
         }
+
         .feature-post-brief {
           transform: translateY(-80%) translateX(9%);
           height: 35%;
@@ -1486,8 +1495,16 @@ section.article-post {
                 height: 140px;
                 width: 140px;
                 border-radius: 5px;
-                background-size: cover;
-                background-position: center;
+                overflow:hidden;
+                img {
+                  height: 100%;
+                  width: 100%;
+                  object-fit: cover;
+                  transition: all 0.5s ease;
+                }
+                img:hover {
+                  transform: scale(1.1);
+                }
               }
 
               .post-date {
@@ -1501,7 +1518,7 @@ section.article-post {
               }
               h2 {
                 font-size: 18px;
-                font-weight: 400;
+                font-weight: 500;
               }
             }
           }

@@ -488,16 +488,24 @@ aboutBox.addEventListener("mousemove", function (e) {
 });
 
 
-const postImages = document.querySelectorAll(".post-image");
-console.log(postImages);
-const postImageURL = [
-  { url: "url(./assets/images/blog-images/article1-image.jpg)" },
-  { url: "url(./assets/images/blog-images/article2-image.jpg)" },
-  { url: "url(./assets/images/blog-images/article3-image.jpg)" },
-  { url: "url(./assets/images/blog-images/article4-image.jpg)" },
-];
-window.addEventListener("load", () => {
-  for (let i = 0; i < postImages.length; i++) {
-    postImages[i].style.backgroundImage = postImageURL[i].url;
-  }
-})
+// const postImages = document.querySelectorAll(".post-image");
+// const postImageURL = [
+//   { url: "url(./assets/images/blog-images/article1-image.jpg)" },
+//   { url: "url(./assets/images/blog-images/article2-image.jpg)" },
+//   { url: "url(./assets/images/blog-images/article3-image.jpg)" },
+//   { url: "url(./assets/images/blog-images/article4-image.jpg)" },
+// ];
+// window.addEventListener("load", () => {
+//   for (let i = 0; i < postImages.length; i++) {
+//     postImages[i].style.backgroundImage = postImageURL[i].url;
+//   }
+// })
+
+// const featurePic = document.querySelector(".feature-post-image");
+// console.log(featurePic);
+// featurePic.addEventListener('mouseenter', (e) => {
+//   e.target.classList.add('active');
+// })
+// featurePic.addEventListener("mouseleave", (e) => {
+//   e.target.classList.remove("active");
+// });
