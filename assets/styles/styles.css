@@ -1266,7 +1266,7 @@ section.article-post .container .blog-container .feature-post .feature-post-imag
   height: 100%;
   width: 100%;
   object-fit: cover;
-  transition: all 0.5s ease;
+  transition: all 0.8s ease;
 }
 section.article-post .container .blog-container .feature-post .feature-post-image img:hover {
   transform: scale(1.1);
@@ -1387,4 +1387,76 @@ section.article-post .container .blog-container .popular-post .post-container .p
 section.article-post .container .blog-container .popular-post .post-container .post:hover {
   transform: scale(1.05);
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+footer {
+  height: 120px;
+  width: 100vw;
+  margin-left: 80px;
+  border-top: 1px solid rgba(192, 192, 211, 0.2);
+  color: #081c3a;
+}
+footer .footer-container {
+  width: 80%;
+  height: 100%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-row-gap: 18px;
+  grid-column-gap: 24px;
+  padding-top: 48px;
+}
+footer .footer-container ul {
+  display: flex;
+  text-align: center;
+}
+footer .footer-container ul :first-child {
+  width: 150px;
+  height: 40px;
+  line-height: 40px;
+  margin-right: 20px;
+  background-color: #f7f8fc;
+  border-radius: 5px;
+  cursor: pointer;
+}
+footer .footer-container ul :nth-child(2) {
+  width: 100px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+footer .footer-container ul :nth-child(3) {
+  width: 120px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+footer .footer-container ul :nth-child(4) {
+  width: 100px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+footer .footer-container ul :nth-child(5) {
+  width: 80px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+footer .footer-container ul .footer-list:hover {
+  background-color: #f7f8fc;
+  transition: all 0.5s ease;
+}
+footer .footer-container .logo {
+  grid-column: 2/3;
+  justify-self: end;
+  align-self: center;
+}
+footer .footer-container .copyright {
+  grid-column: 2/3;
+  justify-self: end;
 }
