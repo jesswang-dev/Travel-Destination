@@ -284,6 +284,7 @@ tesBtnLeft.addEventListener("click", () => {
 });
 
 tesBtnRight.addEventListener("click", () => {
+
   let current;
   for (let i = 0; i < 5; i++) {
     if (numberTab[i].classList.length === 2) {

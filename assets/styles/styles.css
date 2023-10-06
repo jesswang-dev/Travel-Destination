@@ -35,6 +35,8 @@ section.hero {
   overflow: hidden;
   transition: all 0.5s ease;
   z-index: -999;
+  display: grid;
+  grid-template-rows: 25% auto 25%;
 }
 nav.header {
   height: 80px;
@@ -151,14 +153,13 @@ div.left-scroll .social-account ul .social-icon:hover {
   transform: scale(1.05);
 }
 .index-title {
-  position: absolute;
-  left: 150px;
-  top: 50%;
-  transform: translateY(-50%);
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 300px;
+  max-width: 1100px;
+  grid-row: 2/3;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: auto;
+  align-items: center;
+  justify-items: start;
 }
 .index-title h1 {
   font-size: 64px;
@@ -171,6 +172,9 @@ div.left-scroll .social-account ul .social-icon:hover {
   border-radius: 5px;
   margin-top: 2em;
   cursor: pointer;
+}
+.index-title .titles {
+  grid-column: 1/2;
 }
 .video-section {
   width: 400px;
@@ -467,24 +471,24 @@ div.options-slider .slide-main .direct-link .material-symbols-outlined {
   font-weight: 200;
   line-height: 28px;
 }
-section.acrossWorld {
-  height: 800px;
+section.across-world {
+  height: 100vh;
   margin-left: 80px;
   color: black;
   text-align: center;
 }
-section.acrossWorld .title {
+section.across-world .title {
   margin-top: 15vh;
   margin-bottom: 10vh;
 }
-section.acrossWorld .title h2 {
+section.across-world .title h2 {
   font-size: 48px;
   font-weight: 650;
   margin-top: 3vh;
 }
 .swiper {
-  width: 100%;
-  height: 500px;
+  max-width: 100%;
+  height: 65%;
   overflow-y: visible;
 }
 .swiper-wrapper {
@@ -540,15 +544,15 @@ section.acrossWorld .title h2 {
 }
 section.blog {
   width: 95vw;
-  height: 150vh;
+  height: 120vh;
   background-color: #f7f8fc;
-  color: black;
+  color: #081c3a;
   overflow: hidden;
   margin-left: 80px;
 }
 section.blog .blog-info {
-  height: 90vh;
-  width: 80%;
+  height: 70vh;
+  max-width: 80%;
   margin: auto;
   position: relative;
   text-align: left;
@@ -558,23 +562,27 @@ section.blog .blog-info .blog-container {
   width: 100%;
   height: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  gap: 70px;
+}
+section.blog .blog-info .blog-container .blog-left {
+  width: 480px;
+  height: 400px;
 }
 section.blog .blog-info .blog-container .blog-left h2 {
   font-size: 48px;
-  font-weight: 650;
+  font-weight: 600;
 }
 section.blog .blog-info .blog-container .blog-left .text {
   color: #516381;
   font-size: 19px;
+  line-height: 30px;
   font-weight: 400;
   margin-top: 20px;
   margin-bottom: 20px;
 }
 section.blog .blog-info .blog-container .blog-left .option-btn {
-  width: 60%;
+  width: 280px;
   height: 50px;
   line-height: 50px;
   text-align: center;
@@ -586,14 +594,16 @@ section.blog .blog-info .blog-container .blog-left .option-btn .material-symbols
   font-size: 11px;
   line-height: 11px;
 }
-section.blog .blog-info .blog-container .blog-right img {
-  border-radius: 5px;
-  width: 600px;
+section.blog .blog-info .blog-container .blog-right {
+  width: 50%;
   height: 400px;
+  background-image: url(../images/blog-greece.jpg);
+  background-repeat: no-repeat;
+  border-radius: 5px;
 }
 section.blog .features {
   height: 90vh;
-  width: 80%;
+  max-width: 80%;
   margin: auto;
 }
 section.blog .features .feature-container {
@@ -611,7 +621,7 @@ section.blog .features .feature-container .feature {
   border-right: 1px solid rgba(0, 0, 0, 0.1);
   padding-left: 30px;
   padding-right: 30px;
-  transition: all 1s ease;
+  transition: all 0.8s ease;
 }
 section.blog .features .feature-container .feature .feature-icon {
   margin-top: 30px;
@@ -636,6 +646,7 @@ section.blog .features .feature-container .feature h4 {
 section.blog .features .feature-container .feature p {
   margin-top: 10px;
   font-size: 15px;
+  color: #516381;
 }
 section.blog .features .feature-container div.feature:hover {
   transform: scale(1.1);
@@ -683,7 +694,7 @@ section.testimony .testimony-main {
   width: 50px;
   height: 50px;
   line-height: 50px;
-  transition: all 0.3s ease;
+  transition: all 0.5s ease;
 }
 .number-tab .tab-item.active {
   border-left: 2px solid white;
@@ -709,18 +720,22 @@ section.testimony .testimony-main {
   color: black;
 }
 section.popular-sites {
+  width: 95vw;
+  margin-left: 80px;
+}
+section.popular-sites .popular-container {
   transform: translateY(-120px);
   height: 70vh;
-  width: 80%;
+  max-width: 80%;
   color: #081c3a;
   margin: auto;
 }
-section.popular-sites .popular-main {
+section.popular-sites .popular-container .popular-main {
   height: 100%;
   border-radius: 5px;
   background-color: white;
 }
-section.popular-sites .title {
+section.popular-sites .popular-container .title {
   color: white;
 }
 .tab-titles {
@@ -900,63 +915,78 @@ section.no-paddings {
   background-position: center;
   background-blend-mode: darken;
   text-align: center;
+}
+section.no-paddings .no-padding-container {
+  max-width: 80%;
+  height: 100%;
+  margin: auto;
   position: relative;
 }
-section.no-paddings .titles {
+section.no-paddings .no-padding-container .titles {
   width: 50%;
   height: 50%;
-  margin: auto;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-section.no-paddings .titles h1 {
+section.no-paddings .no-padding-container .titles h1 {
   font-size: 48px;
   font-weight: 550;
+  margin-bottom: 30px;
 }
-section.no-paddings .titles .contact-us {
+section.no-paddings .no-padding-container .titles .contact-us {
   font-size: 10px;
   display: inline-block;
-  width: 18%;
+  width: 150px;
   height: 40px;
   background-color: #fff;
   line-height: 40px;
   border-radius: 2px;
   margin-right: 20px;
+  transition: all 0.5s ease;
 }
-section.no-paddings .titles .howitwork {
+section.no-paddings .no-padding-container .titles .howitwork {
   font-size: 10px;
   color: #f7f8fc;
   display: inline-block;
-  width: 18%;
+  width: 150px;
   height: 40px;
   line-height: 40px;
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 2px;
+  transition: all 0.5s ease;
+}
+section.no-paddings .no-padding-container .titles .contact-us:hover {
+  transform: scale(1.05);
+}
+section.no-paddings .no-padding-container .titles .howitwork:hover {
+  transform: scale(1.05);
 }
 section.detailed-info {
-  height: 100vh;
-  width: 100vw;
+  height: 70vh;
+  width: 95vw;
   color: #081c3a;
-  overflow-y: scroll;
   overflow-x: hidden;
+  margin-left: 80px;
   margin-bottom: 100px;
 }
 section.detailed-info .container {
-  width: 80%;
+  max-width: 80%;
   margin: auto;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   gap: 50px;
+  overflow: hidden;
 }
 section.detailed-info .container .start-today-card {
-  height: 70vh;
-  width: 32vw;
+  height: 600px;
+  width: 500px;
   background-color: #f7f8fc;
   border-radius: 10px;
   border: 1px solid rgba(192, 192, 211, 0.2);
   position: relative;
+  overflow: hidden;
 }
 section.detailed-info .container .start-today-card .card-container {
   position: absolute;
@@ -991,7 +1021,7 @@ section.detailed-info .container .start-today-card .card-container .card-text p.
 }
 section.detailed-info .container .start-today-card .card-container .card-text .option-btn {
   font-size: 10px;
-  width: 60%;
+  width: 300px;
   height: 50px;
   line-height: 50px;
   text-align: center;
@@ -1007,19 +1037,20 @@ section.detailed-info .container .start-today-card .card-container .card-text .o
 }
 section.detailed-info .container .step-card {
   position: relative;
-  width: 40vw;
-  height: 160vh;
+  width: 700px;
+  height: 150vh;
   border-left: 2px solid rgba(192, 192, 211, 0.2);
   padding-left: 48px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: 50px;
 }
 section.detailed-info .container .step-card .step {
   position: absolute;
-  width: 48px;
-  height: 48px;
-  left: -24px;
+  width: 50px;
+  height: 50px;
+  left: -25px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1033,26 +1064,28 @@ section.detailed-info .container .step-card .step .outer {
   background-color: #fff;
   transition: all 1s;
 }
-section.detailed-info .container .step-card .step:first-child {
-  top: 30px;
-}
-section.detailed-info .container .step-card .step:nth-child(2) {
-  top: 25%;
-}
-section.detailed-info .container .step-card .step:nth-child(3) {
-  top: 50%;
-}
-section.detailed-info .container .step-card .step:nth-child(4) {
-  top: 100%;
-}
 section.detailed-info .container .step-card .step .inner {
   position: absolute;
-  top: 200px;
-  width: 18px;
-  height: 18px;
-  background-color: #6c6a6a;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 15px;
+  height: 15px;
+  background-color: rgba(192, 192, 211, 0.2);
   border-radius: 50%;
   transition: all 1s;
+}
+section.detailed-info .container .step-card .step:first-child {
+  top: 150px;
+}
+section.detailed-info .container .step-card .step:nth-child(2) {
+  top: 500px;
+}
+section.detailed-info .container .step-card .step:nth-child(3) {
+  top: 850px;
+}
+section.detailed-info .container .step-card .step:nth-child(4) {
+  top: 1200px;
 }
 section.detailed-info .box {
   width: 550px;
@@ -1162,14 +1195,15 @@ section.about-gallery .container .gallery .item img {
   height: 100%;
 }
 section.meet-our-team {
-  height: 100vh;
-  width: 100vw;
+  height: 90vh;
+  width: 95vw;
+  margin-left: 80px;
   color: #081c3a;
   background-color: #f7f8fc;
 }
 section.meet-our-team .container {
   height: 100%;
-  width: 80%;
+  max-width: 80%;
   margin: auto;
   padding-top: 100px;
 }
@@ -1179,7 +1213,7 @@ section.meet-our-team .container .title {
   margin-bottom: 30px;
 }
 section.meet-our-team .container .team-box {
-  height: 53%;
+  height: 480px;
   width: 100%;
   margin: auto;
   background-color: #fff;
@@ -1203,8 +1237,8 @@ section.meet-our-team .container .team-box .member-card:hover {
 }
 section.meet-our-team .container .team-box .member-card .member {
   position: absolute;
-  height: 93%;
-  width: 85%;
+  height: 88%;
+  width: 72%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -1212,11 +1246,17 @@ section.meet-our-team .container .team-box .member-card .member {
 section.meet-our-team .container .team-box .member-card .member .member-image {
   height: 80%;
   width: 100%;
+  border-radius: 5px;
+  overflow: hidden;
 }
 section.meet-our-team .container .team-box .member-card .member .member-image img {
   width: 100%;
   height: 100%;
-  border-radius: 5px;
+  object-fit: cover;
+  transition: all 0.8s ease;
+}
+section.meet-our-team .container .team-box .member-card .member .member-image img:hover {
+  transform: scale(1.1);
 }
 section.meet-our-team .container .team-box .member-card .member .member-name {
   font-size: 20px;
@@ -1455,6 +1495,11 @@ footer .footer-container .logo {
   grid-column: 2/3;
   justify-self: end;
   align-self: center;
+  font-size: 20px;
+  font-weight: 400;
+}
+footer .footer-container .logo span {
+  font-weight: 700;
 }
 footer .footer-container .copyright {
   grid-column: 2/3;
