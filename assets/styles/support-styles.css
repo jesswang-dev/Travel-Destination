@@ -28,9 +28,10 @@ body {
 section.hero {
   background: rgba(0, 0, 0, 0.5);
   background-blend-mode: darken;
-  background-image: url(../images/main-bkg-greece.jpg);
+  background-image: url(../images/support-bkg.jpg);
   background-size: cover;
-  height: 70vh;
+  background-position: center;
+  height: 80vh;
   width: 100vw;
   overflow: hidden;
   transition: all 0.5s ease;
