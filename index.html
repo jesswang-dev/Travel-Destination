@@ -22,77 +22,71 @@
     <link rel="stylesheet" href="./assets/styles/styles.css" />
   </head>
   <body>
-    <section class="hero">
-      <nav class="header">
-        <div class="menu-btn">
-          <span class="material-symbols-outlined"> menu </span>
-        </div>
-        <div class="nav-header">CO<span>VILLA</span></div>
-        <ul class="navigation">
-          <li><a href="./about-page.html">ABOUT</a></li>
-          <li><a href="./journal-page.html">JOURNAL</a></li>
-          <li><a href="./support-page.html">SUPPORT</a></li>
-        </ul>
-        <div class="option-btn subtitle">
-          DESTINATIONS
-          <span class="material-symbols-outlined"> expand_more </span>
-        </div>
-      </nav>
+    <nav class="header">
+      <div class="menu-btn">
+        <span class="material-symbols-outlined"> menu </span>
+      </div>
+      <div class="nav-header">
+        <a href="./index.html">CO<span>VILLA</span></a>
+      </div>
+      <ul class="navigation">
+        <li><a href="./about-page.html">ABOUT</a></li>
+        <li><a href="./journal-page.html">JOURNAL</a></li>
+        <li><a href="./support-page.html">SUPPORT</a></li>
+      </ul>
+      <div class="option-btn subtitle">
+        DESTINATIONS
+        <span class="material-symbols-outlined"> expand_more </span>
+      </div>
+    </nav>
 
-      <div class="expand">
-        <div class="container">
-          <div class="title">
-            <p class="subtitle">choose a location</p>
-            <div class="deco-line"></div>
+    <div class="expand">
+      <div class="container">
+        <div class="title">
+          <p class="subtitle">choose a location</p>
+          <div class="deco-line"></div>
+        </div>
+
+        <div class="location-card">
+          <div class="location" data-loc="france">
+            <div class="title-box">
+              <p class="loc-title">France</p>
+              <p class="subtitle">6 Vacations</p>
+            </div>
+            <span class="material-symbols-outlined"> expand_circle_right </span>
           </div>
-
-          <div class="location-card">
-            <div class="location" data-loc="france">
-              <div class="title-box">
-                <p class="loc-title">France</p>
-                <p class="subtitle">6 Vacations</p>
-              </div>
-              <span class="material-symbols-outlined">
-                expand_circle_right
-              </span>
+          <div class="location" data-loc="indonesia">
+            <div class="title-box">
+              <p class="loc-title">Indonesia</p>
+              <p class="subtitle">6 Vacations</p>
             </div>
-            <div class="location" data-loc="indonesia">
-              <div class="title-box">
-                <p class="loc-title">Indonesia</p>
-                <p class="subtitle">6 Vacations</p>
-              </div>
-              <span class="material-symbols-outlined">
-                expand_circle_right
-              </span>
+            <span class="material-symbols-outlined"> expand_circle_right </span>
+          </div>
+          <div class="location" data-loc="greece">
+            <div class="title-box">
+              <p class="loc-title">Greece</p>
+              <p class="subtitle">6 Vacations</p>
             </div>
-            <div class="location" data-loc="greece">
-              <div class="title-box">
-                <p class="loc-title">Greece</p>
-                <p class="subtitle">6 Vacations</p>
-              </div>
-              <span class="material-symbols-outlined">
-                expand_circle_right
-              </span>
+            <span class="material-symbols-outlined"> expand_circle_right </span>
+          </div>
+          <div class="location" data-loc="egypt">
+            <div class="title-box">
+              <p class="loc-title">Egypt</p>
+              <p class="subtitle">6 Vacations</p>
             </div>
-            <div class="location" data-loc="egypt">
-              <div class="title-box">
-                <p class="loc-title">Egypt</p>
-                <p class="subtitle">6 Vacations</p>
-              </div>
-              <span class="material-symbols-outlined">
-                expand_circle_right
-              </span>
-            </div>
+            <span class="material-symbols-outlined"> expand_circle_right </span>
           </div>
         </div>
       </div>
+    </div>
 
-      <div class="header-scroll"></div>
+    <div class="header-scroll"></div>
 
-      <div class="expand-menu">
-        <div class="exit-btn">
-          <span class="material-symbols-outlined"> close </span>
-        </div>
+    <div class="expand-menu">
+      <div class="exit-btn">
+        <span class="material-symbols-outlined"> close </span>
+      </div>
+      <div class="wrapper">
         <h2>Explore Vacations</h2>
         <div class="menu-container">
           <div class="container">
@@ -203,31 +197,35 @@
           </div>
         </div>
       </div>
+    </div>
 
-      <div class="left-scroll">
-        <div class="scroll-bar">
-          <div class="movable"></div>
-        </div>
-        <div class="social-account">
-          <ul>
-            <li class="social-icon">
-              <img src="./assets/instagram.svg" alt="Instagram Icon Outline" />
-            </li>
-            <li class="social-icon">
-              <img src="./assets/facebook.svg" alt="Facebook Icon Outline" />
-            </li>
-            <li class="social-icon">
-              <img src="./assets/linkedin.svg" alt="LinkedIn Icon Outline" />
-            </li>
-          </ul>
-        </div>
+    <div class="left-scroll">
+      <div class="scroll-bar">
+        <div class="movable"></div>
       </div>
+      <div class="social-account">
+        <ul>
+          <li class="social-icon">
+            <img src="./assets/instagram.svg" alt="Instagram Icon Outline" />
+          </li>
+          <li class="social-icon">
+            <img src="./assets/facebook.svg" alt="Facebook Icon Outline" />
+          </li>
+          <li class="social-icon">
+            <img src="./assets/linkedin.svg" alt="LinkedIn Icon Outline" />
+          </li>
+        </ul>
+      </div>
+    </div>
 
+    <section class="hero">
       <div class="index-title">
         <div class="titles">
           <div class="subtitle">FAMILY TRAVEL AGENCY</div>
           <h1>Let's plan your next vacation</h1>
-          <a class="contact-us subtitle" href="#">CONTACT US</a>
+          <a class="contact-us subtitle" href="./support-page.html"
+            >CONTACT US</a
+          >
         </div>
 
         <div class="video-section">
@@ -717,14 +715,14 @@
 
     <section class="no-paddings">
       <div class="no-padding-container">
-      <div class="titles">
-        <div class="subtitle">Covilla promise</div>
-        <h1>
-          Get unparalleled peace of mind from start to finish of your trip
-        </h1>
-        <a class="contact-us subtitle" href="#">CONTACT US</a>
-        <a class="howitwork subtitle" href="#">HOW IT WORKS</a>
-      </div>
+        <div class="titles">
+          <div class="subtitle">Covilla promise</div>
+          <h1>
+            Get unparalleled peace of mind from start to finish of your trip
+          </h1>
+          <a class="contact-us subtitle" href="#">CONTACT US</a>
+          <a class="howitwork subtitle" href="#">HOW IT WORKS</a>
+        </div>
       </div>
     </section>
 

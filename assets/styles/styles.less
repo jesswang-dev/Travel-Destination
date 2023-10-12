@@ -39,7 +39,7 @@ body {
 
 section.hero {
   //need to add filter
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.4);
   background-blend-mode: darken;
   background-image: url(../images/main-bkg-greece.jpg);
   background-size: cover;
@@ -50,6 +50,7 @@ section.hero {
   z-index: -999;
   display: grid;
   grid-template-rows: 25% auto 25%;
+  grid-template-columns: 80px auto 80px;
 }
 
 nav.header {
@@ -78,8 +79,11 @@ nav.header {
     align-self: center;
     font-size: @s-header-size;
     font-weight: 400;
-    span {
-      font-weight: 700;
+    a {
+      color: rgb(255, 255, 255);
+      span {
+        font-weight: 700;
+      }
     }
   }
 
@@ -132,7 +136,7 @@ div.left-scroll {
     grid-row-end: 3;
     justify-self: center;
     width: 3px;
-    height: 80%;
+    height: 90%;
     border-radius: 2px;
     background-color: rgba(192, 192, 211, 0.2);
     .movable {
@@ -176,14 +180,14 @@ div.left-scroll {
 }
 
 .index-title {
-  max-width: 1100px;
+  max-width: 1200px;
   grid-row: 2/3;
+  grid-column: 2/3;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 600px 400px;
   margin: auto;
-  align-items: center;
-  justify-items: start;
-  // align-items: flex-start;
+  padding-left: 80px;
+  padding-right: 80px;
   h1 {
     font-size: @xxl-header-size;
   }
@@ -200,6 +204,7 @@ div.left-scroll {
 
 .index-title .titles {
   grid-column: 1/2;
+  align-self: center;
 }
 
 .video-section {
@@ -327,10 +332,10 @@ div.left-scroll {
   color: black;
   border-radius: 15px;
   position: fixed;
-  top: 80px;
+  top: 100px;
   right: 100px;
   display: none;
-  transition: all 0.5s;
+  transition: all 0.5s ease;
   z-index: 999;
   .container {
     position: absolute;
@@ -338,11 +343,15 @@ div.left-scroll {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 90%;
-    height: 80%;
+    height: 100%;
     & .title {
+      margin-top: 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      p.subtitle {
+        margin-bottom: 0;
+      }
       .deco-line {
         width: 60%;
         border-top: 1px solid @border-color-bl;
@@ -351,12 +360,12 @@ div.left-scroll {
 
     & .location-card {
       width: 100%;
-      height: 100%;
+      height: 85%;
       margin: auto;
       display: flex;
       align-items: center;
+      justify-content: space-between;
       flex-wrap: wrap;
-      gap: 10px;
       & .location {
         width: 210px;
         height: 100px;
@@ -396,92 +405,154 @@ div.left-scroll {
   width: 30vw;
   height: 100vh;
   background-color: white;
-  color: black;
+  color: #081c3a;
   position: fixed;
   text-align: center;
-  left: -30vw;
+  left: -40vw;
   z-index: 999;
-  transition: all 1s;
+  transition: all 1s ease;
   .exit-btn {
     height: 80px;
     width: 80px;
+    border: 1px solid @border-color-bl;
     cursor: pointer;
 
     & .material-symbols-outlined {
       display: block;
       line-height: 80px;
-      color: black;
+      color: #081c3a;
     }
   }
 
-  h2 {
-    color: black;
-    font-size: 30px;
-    font-weight: 650;
-    margin-bottom: 30px;
-    margin-top: 30px;
-  }
+  div.wrapper {
+    width: 80%;
+    height: 100%;
+    margin: auto;
+    h2 {
+      color: #081c3a;
+      font-size: 30px;
+      font-weight: 650;
+    }
 
-  & .menu-container {
-    height: 70%;
-    position: absolute;
-    left: 80px;
-    overflow-y: scroll;
-    .container {
-      text-align: left;
-
-      .location {
-        height: 90px;
-        width: 20vw;
-        border: 1px solid @border-color-bl;
-        border-radius: 5px;
-        margin-bottom: 10px;
-        cursor: pointer;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        transition: all 0.3s ease;
-        .title-box {
-          .loc-title {
-            font-size: @xs-header-size;
-            font-weight: 500;
+    & .menu-container {
+      height: 80%;
+      width: 100%;
+      margin: auto;
+      padding-left: 35px;
+      overflow-y: scroll;
+  
+      .container {
+        margin-top: 45px;
+        text-align: left;
+        .title {
+          width: 20vw;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 20px;
+          p.subtitle {
+            margin-bottom: 0;
+          }
+          .deco-line {
+            width: 80px;
+            border-top: 1px solid @border-color-bl;
           }
         }
-        .material-symbols-outlined {
-          font-weight: 300;
-          color: white;
+
+        .location {
+          height: 90px;
+          width: 20vw;
+          border: 1px solid @border-color-bl;
+          border-radius: 5px;
+          margin-bottom: 10px;
+          cursor: pointer;
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          transition: all 0.5s ease;
+          .title-box {
+            height: 50%;
+            .loc-title {
+              font-size: @xs-header-size;
+              font-weight: 500;
+              margin-bottom: 8px;
+            }
+          }
+          .material-symbols-outlined {
+            font-weight: 300;
+            color: white;
+            // opacity: 0;
+          }
         }
-      }
 
-      .location.active {
-        background: rgba(0, 0, 0, 0.5);
-        background-blend-mode: darken;
-        background-size: cover;
-        background-repeat: no-repeat;
-        color: #f7f8fc;
-        transform: scale(15px);
-      }
-
-      .contact {
-        height: 45px;
-        width: 20vw;
-        border: 1px solid @border-color-bl;
-        border-radius: 5px;
-        margin-bottom: 10px;
-        cursor: pointer;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-
-        .contact-text {
-          font-size: @xxs-header-size;
+        .location.active {
+          background: rgba(0, 0, 0, 0.5);
+          background-blend-mode: darken;
+          background-size: cover;
+          background-repeat: no-repeat;
+          color: #f7f8fc;
+          transform: scale(15px);
+          .material-symbols-outlined {
+            animation: fade-in 0.8s;
+          }
         }
-      }
 
-      .material-symbols-outlined {
-        font-weight: 300;
+        .contact {
+          height: 45px;
+          width: 20vw;
+          background-color: #f7f8fc;
+          border: 1px solid @border-color-bl;
+          border-radius: 5px;
+          margin-bottom: 10px;
+          cursor: pointer;
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          transition: all 0.8 ease;
+          .contact-text {
+            font-size: 13px;
+          }
+
+          .material-symbols-outlined {
+            font-size: 18px;
+            font-weight: 200;
+            opacity: 0;
+          }
+        }
+
+        .contact.active {
+          .contact-text{
+          animation: slide-left 0.8s;
+          transform: translate(-5px);
+          }
+          .material-symbols-outlined {
+            animation: fade-in 0.8s;
+            opacity: 1;
+            transform: translateX(5px);
+          }
+        }
       }
     }
+  }
+}
+
+@keyframes fade-in {
+  from {
+     transform: translateX(0);
+     opacity: 0
+  }
+  to {
+    transform: translateX(5px);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-5px);
   }
 }
 

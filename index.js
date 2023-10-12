@@ -46,11 +46,12 @@ function changeElement(count) {
 
 //header scrolling effect
 const header = document.querySelector(".header-scroll");
-const logo = document.querySelector(".nav-header");
+const logo = document.querySelector(".nav-header a");
 const navBar = document.querySelector(".navigation");
 const optionBtn = document.querySelector(".option-btn");
 const leftScroll = document.querySelector(".scroll-bar");
 const movable = document.querySelector(".movable");
+
 
 window.addEventListener("scroll", (e) => {
   const n = document.documentElement.scrollTop;
@@ -139,7 +140,7 @@ exitBtn.addEventListener("click", (e) => {
 
 //add background effect while mouseover location card in expand class
 const locationCard = document.querySelectorAll(".location");
-console.log(locationCard);
+// console.log(locationCard);
 
 for (let i = 0; i < locationCard.length; i++) {
   locationCard[i].addEventListener("mouseover", (e) => {
@@ -197,6 +198,16 @@ for (let i = 0; i < locationCard.length; i++) {
       });
     }
   });
+}
+
+const contactCard = document.querySelectorAll(".contact");
+for(let i = 0; i < contactCard.length; i++) {
+  contactCard[i].addEventListener("mouseenter", (e) => {
+    e.target.classList.add("active");
+  });
+  contactCard[i].addEventListener("mouseleave", (e) => {
+    e.target.classList.remove("active");
+  })
 }
 
 const outerRing = document.querySelector(".video-section");
