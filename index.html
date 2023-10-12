@@ -360,11 +360,57 @@
               CHOOSE A DESTINATION
               <span class="material-symbols-outlined"> expand_more </span>
             </div>
+
+            <div class="blog-expand">
+              <div class="container">
+                <div class="title">
+                  <p class="subtitle">choose a location</p>
+                  <div class="deco-line"></div>
+                </div>
+
+                <div class="location-card">
+                  <div class="location" data-loc="france">
+                    <div class="title-box">
+                      <p class="loc-title">France</p>
+                      <p class="subtitle">6 Vacations</p>
+                    </div>
+                    <span class="material-symbols-outlined">
+                      expand_circle_right
+                    </span>
+                  </div>
+                  <div class="location" data-loc="indonesia">
+                    <div class="title-box">
+                      <p class="loc-title">Indonesia</p>
+                      <p class="subtitle">6 Vacations</p>
+                    </div>
+                    <span class="material-symbols-outlined">
+                      expand_circle_right
+                    </span>
+                  </div>
+                  <div class="location" data-loc="greece">
+                    <div class="title-box">
+                      <p class="loc-title">Greece</p>
+                      <p class="subtitle">6 Vacations</p>
+                    </div>
+                    <span class="material-symbols-outlined">
+                      expand_circle_right
+                    </span>
+                  </div>
+                  <div class="location" data-loc="egypt">
+                    <div class="title-box">
+                      <p class="loc-title">Egypt</p>
+                      <p class="subtitle">6 Vacations</p>
+                    </div>
+                    <span class="material-symbols-outlined">
+                      expand_circle_right
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <div class="blog-right">
-            <!-- <img src="./assets/images/blog-greece.jpg" alt="greece" /> -->
-          </div>
+          <div class="blog-right"></div>
         </div>
       </div>
 
@@ -430,7 +476,7 @@
         <li class="tab-item">5</li>
       </ul>
       <div class="testimony-main">
-        <div class="testimony-text">
+        <div class="testimony-text active">
           <p class="client-message">
             Donec sed auctor orci. In a nisl vel nisi egestas efficitur nec ac
             neque. Sed vitae sollicitudin elit, ac tristique nisi. Pellentesque
@@ -439,6 +485,47 @@
           </p>
           <p class="client-name">Samantha Vohnhale</p>
         </div>
+
+        <div class="testimony-text">
+          <p class="client-message">
+            Donec sed auctor orci. In a nisl vel nisi egestas efficitur nec ac
+            neque. Sed vitae sollicitudin elit, ac tristique nisi. Pellentesque
+            rutrum egestas massa lacinia volutpat. Integer et facilisis elit,
+            vitae lobortis enim.
+          </p>
+          <p class="client-name">Wilson Tomales</p>
+        </div>
+
+        <div class="testimony-text">
+          <p class="client-message">
+            Donec sed auctor orci. In a nisl vel nisi egestas efficitur nec ac
+            neque. Sed vitae sollicitudin elit, ac tristique nisi. Pellentesque
+            rutrum egestas massa lacinia volutpat. Integer et facilisis elit,
+            vitae lobortis enim.
+          </p>
+          <p class="client-name">Tammy Georgeon</p>
+        </div>
+
+        <div class="testimony-text">
+          <p class="client-message">
+            Donec sed auctor orci. In a nisl vel nisi egestas efficitur nec ac
+            neque. Sed vitae sollicitudin elit, ac tristique nisi. Pellentesque
+            rutrum egestas massa lacinia volutpat. Integer et facilisis elit,
+            vitae lobortis enim.
+          </p>
+          <p class="client-name">Emily Camphon</p>
+        </div>
+
+        <div class="testimony-text">
+          <p class="client-message">
+            Donec sed auctor orci. In a nisl vel nisi egestas efficitur nec ac
+            neque. Sed vitae sollicitudin elit, ac tristique nisi. Pellentesque
+            rutrum egestas massa lacinia volutpat. Integer et facilisis elit,
+            vitae lobortis enim.
+          </p>
+          <p class="client-name">Cassie Shamath</p>
+        </div>
+
         <div class="nav-buttons">
           <div class="swiper-custom-nav" id="tes-left">
             <span class="material-symbols-outlined"> arrow_back </span>
@@ -484,10 +571,12 @@
             <div class="page active" data-index="1">
               <div class="city-info">
                 <div class="card-container">
-                  <img
-                    src="./assets/images/small-images/eg-BahariyaOasis.jpg"
-                    alt="Bahariya Oasis"
-                  />
+                  <div class="image">
+                    <img
+                      src="./assets/images/small-images/eg-BahariyaOasis.jpg"
+                      alt="Bahariya Oasis"
+                    />
+                  </div>
                   <h4>Bahariya Oasis</h4>
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -502,10 +591,12 @@
               </div>
               <div class="city-info">
                 <div class="card-container">
-                  <img
-                    src="./assets/images/small-images/eg-SahlHasheesh.jpg"
-                    alt="Sahl Hasheesh"
-                  />
+                  <div class="image">
+                    <img
+                      src="./assets/images/small-images/eg-SahlHasheesh.jpg"
+                      alt="Sahl Hasheesh"
+                    />
+                  </div>
                   <h4>Sahl Hasheesh</h4>
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -520,10 +611,12 @@
               </div>
               <div class="city-info">
                 <div class="card-container">
-                  <img
-                    src="./assets/images/small-images/eg-Alexandria.jpg"
-                    alt="Alexandria"
-                  />
+                  <div class="image">
+                    <img
+                      src="./assets/images/small-images/eg-Alexandria.jpg"
+                      alt="Alexandria"
+                    />
+                  </div>
                   <h4>Alexandria</h4>
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -541,10 +634,12 @@
             <div class="page" data-index="2">
               <div class="city-info">
                 <div class="card-container">
-                  <img
-                    src="./assets/images/small-images/gr-Palaiokastritsa.jpg"
-                    alt="Palaiokastritsa"
-                  />
+                  <div class="image">
+                    <img
+                      src="./assets/images/small-images/gr-Palaiokastritsa.jpg"
+                      alt="Palaiokastritsa"
+                    />
+                  </div>
                   <h4>Palaiokastritsa</h4>
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -559,10 +654,12 @@
               </div>
               <div class="city-info">
                 <div class="card-container">
-                  <img
-                    src="./assets/images/small-images/gr-Meteora.jpg"
-                    alt="Meteora"
-                  />
+                  <div class="image">
+                    <img
+                      src="./assets/images/small-images/gr-Meteora.jpg"
+                      alt="Meteora"
+                    />
+                  </div>
                   <h4>Meteora</h4>
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -577,10 +674,12 @@
               </div>
               <div class="city-info">
                 <div class="card-container">
-                  <img
-                    src="./assets/images/small-images/gr-Thessaloniki.jpg"
-                    alt="Thessaloniki"
-                  />
+                  <div class="image">
+                    <img
+                      src="./assets/images/small-images/gr-Thessaloniki.jpg"
+                      alt="Thessaloniki"
+                    />
+                  </div>
                   <h4>Thessaloniki</h4>
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -598,10 +697,12 @@
             <div class="page" data-index="3">
               <div class="city-info">
                 <div class="card-container">
-                  <img
-                    src="./assets/images/small-images/id-Canggu.jpg"
-                    alt="Canggu"
-                  />
+                  <div class="image">
+                    <img
+                      src="./assets/images/small-images/id-Canggu.jpg"
+                      alt="Canggu"
+                    />
+                  </div>
                   <h4>Canggu</h4>
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -616,10 +717,12 @@
               </div>
               <div class="city-info">
                 <div class="card-container">
-                  <img
-                    src="./assets/images/small-images/id-Komodo.jpg"
-                    alt="Komodo"
-                  />
+                  <div class="image">
+                    <img
+                      src="./assets/images/small-images/id-Komodo.jpg"
+                      alt="Komodo"
+                    />
+                  </div>
                   <h4>Komodo</h4>
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -634,10 +737,12 @@
               </div>
               <div class="city-info">
                 <div class="card-container">
-                  <img
-                    src="./assets/images/small-images/id-PenidaIsland.jpg"
-                    alt="Penida Island"
-                  />
+                  <div class="image">
+                    <img
+                      src="./assets/images/small-images/id-PenidaIsland.jpg"
+                      alt="Penida Island"
+                    />
+                  </div>
                   <h4>Penida Island</h4>
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -655,10 +760,12 @@
             <div class="page" data-index="4">
               <div class="city-info">
                 <div class="card-container">
-                  <img
-                    src="./assets/images/small-images/fr-Bonifacio.jpg"
-                    alt="Bonfifacio"
-                  />
+                  <div class="image">
+                    <img
+                      src="./assets/images/small-images/fr-Bonifacio.jpg"
+                      alt="Bonfifacio"
+                    />
+                  </div>
                   <h4>Bonifacio</h4>
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -673,10 +780,12 @@
               </div>
               <div class="city-info">
                 <div class="card-container">
-                  <img
-                    src="./assets/images/small-images/fr-Brittany.jpg"
-                    alt="Brittany"
-                  />
+                  <div class="image">
+                    <img
+                      src="./assets/images/small-images/fr-Brittany.jpg"
+                      alt="Brittany"
+                    />
+                  </div>
                   <h4>Brittany</h4>
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -691,10 +800,12 @@
               </div>
               <div class="city-info">
                 <div class="card-container">
-                  <img
-                    src="./assets/images/small-images/fr-Carcassonne.jpg"
-                    alt="Carcassonne"
-                  />
+                  <div class="image">
+                    <img
+                      src="./assets/images/small-images/fr-Carcassonne.jpg"
+                      alt="Carcassonne"
+                    />
+                  </div>
                   <h4>Carcassonne</h4>
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -890,7 +1001,7 @@
         <div class="title">
           <p class="subtitle">meet your travel agents</p>
           <div class="deco-line"></div>
-          <div class="optionBtn subtitle">About us</div>
+          <div class="option-btn subtitle">About us</div>
         </div>
         <div class="team-box">
           <div class="member-card">

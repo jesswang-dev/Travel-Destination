@@ -1,5 +1,3 @@
-
-
 //script to change index background
 const indexPageData = [
   {
@@ -51,7 +49,7 @@ const navBar = document.querySelector(".navigation");
 const optionBtn = document.querySelector(".option-btn");
 const leftScroll = document.querySelector(".scroll-bar");
 const movable = document.querySelector(".movable");
-
+const stickyCard = document.querySelector(".start-today-card");
 
 window.addEventListener("scroll", (e) => {
   const n = document.documentElement.scrollTop;
@@ -83,6 +81,12 @@ window.addEventListener("scroll", (e) => {
     optionBtn.style.color = "rgb(51,51,51)";
     optionBtn.style.border = "1px solid rgb(51,51,51)";
   }
+
+  // if(n >= 4600 && n < 4900) {
+  //   stickyCard.classList.add(".sticky");
+  // } else {
+  //   stic
+  // }
 });
 
 //click effect on optionBtn, MenuBtn and exitBtn
@@ -115,7 +119,36 @@ optionBtn.addEventListener("click", (e) => {
   }
 });
 
+let blogClickCount = 0;
+const blogOptionBtn = document.querySelector(".blog .option-btn");
+
+blogOptionBtn.addEventListener("click", (e) => {
+  if (e) {
+    blogClickCount++;
+  }
+  if (blogClickCount % 2 === 1) {
+    if (e.target.tagName === "DIV") {
+      e.target.children[0].innerHTML = " expand_less ";
+      blogExpandDisplay.classList.add("active");
+    }
+    if (e.target.tagName === "SPAN") {
+      e.target.innerHTML = " expand_less ";
+      blogExpandDisplay.classList.add("active");
+    }
+  } else {
+    if (e.target.tagName === "DIV") {
+      e.target.children[0].innerHTML = " expand_more ";
+      blogExpandDisplay.classList.remove("active");
+    }
+    if (e.target.tagName === "SPAN") {
+      e.target.innerHTML = " expand_more ";
+      blogExpandDisplay.classList.remove("active");
+    }
+  }
+});
+
 const expandDisplay = document.querySelector(".expand");
+const blogExpandDisplay = document.querySelector(".blog-expand");
 const menuBtn = document.querySelector(".menu-btn");
 const exitBtn = document.querySelector(".exit-btn");
 const menuDisplay = document.querySelector(".expand-menu");
@@ -201,13 +234,13 @@ for (let i = 0; i < locationCard.length; i++) {
 }
 
 const contactCard = document.querySelectorAll(".contact");
-for(let i = 0; i < contactCard.length; i++) {
+for (let i = 0; i < contactCard.length; i++) {
   contactCard[i].addEventListener("mouseenter", (e) => {
     e.target.classList.add("active");
   });
   contactCard[i].addEventListener("mouseleave", (e) => {
     e.target.classList.remove("active");
-  })
+  });
 }
 
 const outerRing = document.querySelector(".video-section");
@@ -241,37 +274,10 @@ feature.addEventListener("mouseleave", (e) => {
   e.target.classList.remove("active");
 });
 
-const testimonyData = [
-  {
-    message:
-      "Donec sed auctor orci. In a nisl vel nisi egestas efficitur nec ac neque. Sed vitae sollicitudin elit, ac tristique nisi. Pellentesque rutrum egestas massa lacinia volutpat. Integer et facilisis elit, vitae lobortis enim.",
-    name: "Samantha Vohnhale",
-  },
-  {
-    message:
-      "Donec sed auctor orci. In a nisl vel nisi egestas efficitur nec ac neque. Sed vitae sollicitudin elit, ac tristique nisi. Pellentesque rutrum egestas massa lacinia volutpat. Integer et facilisis elit, vitae lobortis enim.",
-    name: "Wilson Tomales",
-  },
-  {
-    message:
-      "Donec sed auctor orci. In a nisl vel nisi egestas efficitur nec ac neque. Sed vitae sollicitudin elit, ac tristique nisi. Pellentesque rutrum egestas massa lacinia volutpat. Integer et facilisis elit, vitae lobortis enim.",
-    name: "Tammy Georgeon",
-  },
-  {
-    message:
-      "Donec sed auctor orci. In a nisl vel nisi egestas efficitur nec ac neque. Sed vitae sollicitudin elit, ac tristique nisi. Pellentesque rutrum egestas massa lacinia volutpat. Integer et facilisis elit, vitae lobortis enim.",
-    name: "Emily Camphon",
-  },
-  {
-    message:
-      "Donec sed auctor orci. In a nisl vel nisi egestas efficitur nec ac neque. Sed vitae sollicitudin elit, ac tristique nisi. Pellentesque rutrum egestas massa lacinia volutpat. Integer et facilisis elit, vitae lobortis enim.",
-    name: "Cassie Shamath",
-  },
-];
 
 const tesBtnLeft = document.querySelector("#tes-left");
 const tesBtnRight = document.querySelector("#tes-right");
-const testimony = document.querySelector(".testimony-text");
+const testimony = document.querySelectorAll(".testimony-text");
 const numberTab = document.querySelectorAll(".tab-item");
 
 tesBtnLeft.addEventListener("click", () => {
@@ -289,13 +295,11 @@ tesBtnLeft.addEventListener("click", () => {
   }
   numberTab[current].classList.remove("active");
   numberTab[next].classList.add("active");
-
-  testimony.children[0].innerHTML = testimonyData[next].message;
-  testimony.children[1].innerHTML = testimonyData[next].name;
+  testimony[current].classList.remove("active");
+  testimony[next].classList.add("active");
 });
 
 tesBtnRight.addEventListener("click", () => {
-
   let current;
   for (let i = 0; i < 5; i++) {
     if (numberTab[i].classList.length === 2) {
@@ -310,8 +314,8 @@ tesBtnRight.addEventListener("click", () => {
   }
   numberTab[current].classList.remove("active");
   numberTab[next].classList.add("active");
-  testimony.children[0].innerHTML = testimonyData[next].message;
-  testimony.children[1].innerHTML = testimonyData[next].name;
+  testimony[current].classList.remove("active");
+  testimony[next].classList.add("active");
 });
 
 const popularCountryData = new Map();
@@ -424,7 +428,6 @@ const innerDotsList = document.querySelectorAll(".dot");
 const pageList = document.querySelectorAll(".page");
 const tabTitles = document.querySelectorAll(".tab-title");
 
-
 tabDots.addEventListener("click", (e) => {
   if (e.target.tagName === "LI") {
     const current = Number(e.target.dataset.index);
@@ -449,7 +452,6 @@ tabDots.addEventListener("click", (e) => {
     }
 
     activeBar.style.backgroundImage = changeBarBkgColor(current);
-
   }
 });
 
@@ -498,26 +500,3 @@ aboutBox.addEventListener("mousemove", function (e) {
     aboutBox.style.marginLeft = "-900px";
   }
 });
-
-
-// const postImages = document.querySelectorAll(".post-image");
-// const postImageURL = [
-//   { url: "url(./assets/images/blog-images/article1-image.jpg)" },
-//   { url: "url(./assets/images/blog-images/article2-image.jpg)" },
-//   { url: "url(./assets/images/blog-images/article3-image.jpg)" },
-//   { url: "url(./assets/images/blog-images/article4-image.jpg)" },
-// ];
-// window.addEventListener("load", () => {
-//   for (let i = 0; i < postImages.length; i++) {
-//     postImages[i].style.backgroundImage = postImageURL[i].url;
-//   }
-// })
-
-// const featurePic = document.querySelector(".feature-post-image");
-// console.log(featurePic);
-// featurePic.addEventListener('mouseenter', (e) => {
-//   e.target.classList.add('active');
-// })
-// featurePic.addEventListener("mouseleave", (e) => {
-//   e.target.classList.remove("active");
-// });

@@ -336,6 +336,7 @@ div.left-scroll {
   right: 100px;
   display: none;
   transition: all 0.5s ease;
+  animation: fade-in-card 0.8s;
   z-index: 999;
   .container {
     position: absolute;
@@ -378,6 +379,7 @@ div.left-scroll {
         transition: all 0.3s ease;
 
         .title-box {
+          height: 50%;
           .loc-title {
             margin-bottom: 10px;
             font-weight: 500;
@@ -386,7 +388,8 @@ div.left-scroll {
         }
 
         .material-symbols-outlined {
-          color: white;
+          font-weight: 300;
+          opacity: 0;
         }
       }
       & .active {
@@ -396,6 +399,10 @@ div.left-scroll {
         background-repeat: no-repeat;
         color: #f7f8fc;
         transform: scale(15px);
+        .material-symbols-outlined {
+          opacity: 1;
+          animation: fade-in 0.8s;
+        }
       }
     }
   }
@@ -440,7 +447,7 @@ div.left-scroll {
       margin: auto;
       padding-left: 35px;
       overflow-y: scroll;
-  
+
       .container {
         margin-top: 45px;
         text-align: left;
@@ -481,7 +488,7 @@ div.left-scroll {
           .material-symbols-outlined {
             font-weight: 300;
             color: white;
-            // opacity: 0;
+            opacity: 0;
           }
         }
 
@@ -521,9 +528,9 @@ div.left-scroll {
         }
 
         .contact.active {
-          .contact-text{
-          animation: slide-left 0.8s;
-          transform: translate(-5px);
+          .contact-text {
+            animation: slide-left 0.8s;
+            transform: translate(-5px);
           }
           .material-symbols-outlined {
             animation: fade-in 0.8s;
@@ -538,8 +545,8 @@ div.left-scroll {
 
 @keyframes fade-in {
   from {
-     transform: translateX(0);
-     opacity: 0
+    transform: translateX(0);
+    opacity: 0;
   }
   to {
     transform: translateX(5px);
@@ -558,7 +565,7 @@ div.left-scroll {
 
 div.options-slider {
   height: 150px;
-  width: 400px;
+  width: 35%;
   position: absolute;
   right: 0;
   bottom: 0;
@@ -587,6 +594,16 @@ div.options-slider {
       }
     }
 
+    .slide-button {
+      transition: all 1s ease-in-out;
+      #prev:hover {
+        transform: translateX(-5px);
+      }
+      #next:hover {
+        transform: translateX(5px);
+      }
+    }
+
     .slide-main-location {
       font-weight: 600;
       font-size: @main-text-size;
@@ -602,10 +619,11 @@ div.options-slider {
     }
   }
 }
+
 section.across-world {
   height: 100vh;
   margin-left: 80px;
-  color: black;
+  color: #081c3a;
   text-align: center;
 
   .title {
@@ -632,13 +650,14 @@ section.across-world {
 
 .swiper-slide {
   position: relative;
-  transition: all 0.3s ease 0.3s;
+  transition: all 0.5s ease-in-out;
   cursor: pointer;
 
   img {
     width: 100%;
     height: 100%;
     border-radius: 5px;
+    object-fit: cover;
   }
 
   & .titles {
@@ -702,6 +721,7 @@ section.blog {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 50px;
       .blog-left {
         width: 480px;
         height: 400px;
@@ -729,6 +749,97 @@ section.blog {
             font-size: 11px;
             line-height: 11px;
           }
+        }
+        .option-btn:hover {
+          background-color: #081c3a;
+          transform: scale(1.01);
+        }
+
+        .blog-expand {
+          width: 500px;
+          height: 300px;
+          background-color: white;
+          color: #081c3a;
+          border-radius: 15px;
+          position: sticky;
+          top: 490px;
+          left: 200px;
+          display: none;
+          transition: all 1s ease;
+          box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+          z-index: 999;
+          .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            height: 100%;
+            & .title {
+              margin-top: 20px;
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              p.subtitle {
+                margin-bottom: 0;
+              }
+              .deco-line {
+                width: 60%;
+                border-top: 1px solid @border-color-bl;
+              }
+            }
+
+            & .location-card {
+              width: 100%;
+              height: 85%;
+              margin: auto;
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              flex-wrap: wrap;
+              & .location {
+                width: 210px;
+                height: 100px;
+                border: 1px solid @border-color-bl;
+                border-radius: 5px;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                cursor: pointer;
+                transition: all 0.3s ease;
+
+                .title-box {
+                  height: 50%;
+                  .loc-title {
+                    margin-bottom: 10px;
+                    font-weight: 500;
+                    font-size: @xs-header-size;
+                  }
+                }
+
+                .material-symbols-outlined {
+                  font-weight: 300;
+                  opacity: 0;
+                }
+              }
+              & .active {
+                background: rgba(0, 0, 0, 0.5);
+                background-blend-mode: darken;
+                background-size: cover;
+                background-repeat: no-repeat;
+                color: #f7f8fc;
+                transform: scale(15px);
+                .material-symbols-outlined {
+                  opacity: 1;
+                  animation: fade-in 0.8s;
+                }
+              }
+            }
+          }
+        }
+        .blog-expand.active {
+          animation: fade-in-card 0.8s;
+          display: block;
         }
       }
 
@@ -761,7 +872,7 @@ section.blog {
         border-right: 1px solid @border-color-bl;
         padding-left: 30px;
         padding-right: 30px;
-        transition: all 0.8s ease;
+        transition: all 0.5s ease;
 
         .feature-icon {
           margin-top: 30px;
@@ -792,7 +903,7 @@ section.blog {
       }
 
       div.feature:hover {
-        transform: scale(1.1);
+        transform: scale(1.05);
         background-color: white;
         border-radius: 8px;
         box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
@@ -805,6 +916,18 @@ section.blog {
   transform: scale(1.5);
   border-radius: 5px;
   border: 1px solid @border-color-bl;
+}
+
+@keyframes fade-in-card {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 section.testimony {
@@ -861,44 +984,31 @@ section.testimony {
   .testimony-text {
     grid-column: 2/3;
     font-size: @s-header-size;
+    display: none;
+    animation: fade-in-card 1s;
+
+    &.active {
+      display: block;
+    }
+
     .client-name {
       margin-top: 23px;
       font-size: 23px;
       font-weight: 500;
     }
   }
-
   .material-symbols-outlined {
     color: black;
   }
 }
 
-// .animation {
-//     animation: fade-out-in 2s;
-//   }
-
-// @keyframes fade-out-in {
-//   0% {
-//     opacity: 1;
-//   }
-
-//   50% {
-//     opacity: 0;
-//   }
-
-//   100% {
-//     opacity: 1;
-//   }
-
-// }
-
 section.popular-sites {
-  width: 95vw;
+  width: 90vw;
   margin-left: 80px;
   .popular-container {
     transform: translateY(-120px);
-    height: 70vh;
-    max-width: 80%;
+    height: 80vh;
+    max-width: 92%;
     color: #081c3a;
     margin: auto;
     .popular-main {
@@ -1024,7 +1134,7 @@ section.popular-sites {
   }
 
   .city-info {
-    width: 380px;
+    width: 31%;
     height: 450px;
     border: 1px solid @border-color-bl;
     border-radius: 10px;
@@ -1037,11 +1147,20 @@ section.popular-sites {
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      img {
+      .image {
         width: 100%;
         height: 50%;
         border-radius: 5px;
-        background-size: cover;
+        overflow: hidden;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: all 0.5s ease;
+        }
+        img:hover {
+          transform: scale(1.1);
+        }
       }
 
       h4 {
@@ -1071,6 +1190,7 @@ section.popular-sites {
         display: flex;
         justify-content: space-between;
         .rate {
+          font-size: 14px;
           width: 35%;
         }
         .detailBtn {
@@ -1112,7 +1232,7 @@ section.no-paddings {
     margin: auto;
     position: relative;
     .titles {
-      width: 50%;
+      width: 80%;
       height: 50%;
       position: absolute;
       top: 50%;
@@ -1126,10 +1246,10 @@ section.no-paddings {
       .contact-us {
         font-size: 10px;
         display: inline-block;
-        width: 150px;
-        height: 40px;
+        width: 180px;
+        height: 50px;
         background-color: #fff;
-        line-height: 40px;
+        line-height: 50px;
         border-radius: 2px;
         margin-right: 20px;
         transition: all 0.5s ease;
@@ -1139,9 +1259,9 @@ section.no-paddings {
         font-size: 10px;
         color: #f7f8fc;
         display: inline-block;
-        width: 150px;
-        height: 40px;
-        line-height: 40px;
+        width: 180px;
+        height: 50px;
+        line-height: 50px;
         border: 1px solid @border-color;
         border-radius: 2px;
         transition: all 0.5s ease;
@@ -1160,27 +1280,27 @@ section.no-paddings {
 
 section.detailed-info {
   height: 70vh;
-  width: 95vw;
+  width: 90vw;
   color: #081c3a;
   overflow-x: hidden;
   margin-left: 80px;
   margin-bottom: 100px;
 
   .container {
-    max-width: 80%;
+    max-width: 92%;
     margin: auto;
     display: flex;
     justify-content: space-between;
     gap: 50px;
-    overflow: hidden;
 
     .start-today-card {
-      height: 600px;
-      width: 500px;
+      height: 620px;
+      width: 550px;
       background-color: #f7f8fc;
       border-radius: 10px;
       border: 1px solid rgba(192, 192, 211, 0.2);
-      position: relative;
+      position: sticky;
+      top: 0;
       overflow: hidden;
 
       .card-container {
@@ -1210,8 +1330,8 @@ section.detailed-info {
           }
 
           p.text {
-            font-size: 19px;
-            line-height: 30px;
+            font-size: 18px;
+            line-height: 25px;
             color: #516381;
             margin-bottom: 30px;
           }
@@ -1239,7 +1359,7 @@ section.detailed-info {
     .step-card {
       position: relative;
       width: 700px;
-      height: 150vh;
+      height: 160vh;
       border-left: 2px solid rgba(192, 192, 211, 0.2);
       padding-left: 48px;
       display: flex;
@@ -1279,7 +1399,7 @@ section.detailed-info {
         }
 
         &:first-child {
-          top: 150px;
+          top: 100px;
         }
 
         &:nth-child(2) {
@@ -1378,7 +1498,7 @@ section.about-gallery {
       margin: auto;
       position: relative;
       .text-container {
-        width: 70%;
+        width: 80%;
         position: absolute;
         top: 50%;
         left: 50%;
@@ -1392,6 +1512,7 @@ section.about-gallery {
         }
         .right-text {
           font-size: 18px;
+          color:#516381;
         }
       }
     }
@@ -1416,13 +1537,13 @@ section.about-gallery {
 
 section.meet-our-team {
   height: 90vh;
-  width: 95vw;
+  width: 90vw;
   margin-left: 80px;
   color: #081c3a;
   background-color: #f7f8fc;
   .container {
     height: 100%;
-    max-width: 80%;
+    max-width: 92%;
     margin: auto;
     padding-top: 100px;
     .title {
@@ -1433,7 +1554,7 @@ section.meet-our-team {
       }
     }
     .team-box {
-      height: 480px;
+      height: 450px;
       width: 100%;
       margin: auto;
       background-color: #fff;
@@ -1450,14 +1571,14 @@ section.meet-our-team {
         border-radius: 10px;
         .member {
           position: absolute;
-          height: 88%;
+          height: 85%;
           width: 72%;
           top: 50%;
           left: 50%;
           transform: translate(-50%, -50%);
 
           .member-image {
-            height: 80%;
+            height: 75%;
             width: 100%;
             border-radius: 5px;
             overflow: hidden;
@@ -1491,13 +1612,14 @@ section.meet-our-team {
 
 section.article-post {
   height: 100vh;
-  max-width: 100vw;
+  width: 90vw;
+  margin-left: 80px;
   color: #081c3a;
   .container {
     transform: translateY(-70px);
     position: relative;
     height: 100%;
-    max-width: 80%;
+    max-width: 92%;
     margin: auto;
     background-color: #fff;
     border-radius: 5px;
@@ -1506,6 +1628,7 @@ section.article-post {
       position: absolute;
       height: 90%;
       width: 92%;
+      margin: auto;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
@@ -1514,7 +1637,7 @@ section.article-post {
       gap: 50px;
       .feature-post {
         height: 100%;
-        width: 50%;
+        width: 55%;
         .feature-post-image {
           height: 90%;
           width: 100%;
@@ -1532,9 +1655,9 @@ section.article-post {
         }
 
         .feature-post-brief {
-          transform: translateY(-80%) translateX(9%);
-          height: 35%;
-          width: 85%;
+          transform: translateY(-80%) translateX(5%);
+          height: 350px;
+          width: 90%;
           // border: 1px solid olivedrab;
           background-color: #fff;
           border-radius: 15px;
@@ -1598,14 +1721,14 @@ section.article-post {
 
         .post-container {
           width: 100%;
-          height: 90%;
+          height: 95%;
           // border: 1px solid plum;
           display: flex;
           flex-direction: column;
           justify-content: space-around;
           .post {
             height: 150px;
-            width: 80%;
+            width: 500px;
             border-radius: 5px;
             // border: 1px solid orangered;
             position: relative;
