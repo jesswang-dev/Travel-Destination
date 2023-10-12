@@ -345,15 +345,16 @@ section.no-paddings .no-padding-container .titles p {
   line-height: 30px;
 }
 section.form {
-  width: 100vw;
+  width: 90vw;
   height: 90vh;
+  margin-left: 80px;
   background-color: #fff;
   color: #081c3a;
 }
 section.form .form-container {
   transform: translateY(-70px);
   background-color: #fff;
-  width: 75%;
+  width: 92%;
   height: 100%;
   margin: auto;
   border-radius: 10px;
@@ -457,21 +458,25 @@ section.form .form-container .form-box .form-social .social-link .material-symbo
   font-weight: 300;
 }
 section.meet-our-team {
-  height: 50vh;
-  width: 95vw;
+  height: 90vh;
+  width: 90vw;
   margin-left: 80px;
   color: #081c3a;
   background-color: #f7f8fc;
 }
 section.meet-our-team .container {
   height: 100%;
-  max-width: 80%;
+  max-width: 92%;
   margin: auto;
   padding-top: 100px;
-  transform: translateY(-150px);
+}
+section.meet-our-team .container .title {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
 }
 section.meet-our-team .container .team-box {
-  height: 480px;
+  height: 450px;
   width: 100%;
   margin: auto;
   background-color: #fff;
@@ -495,14 +500,14 @@ section.meet-our-team .container .team-box .member-card:hover {
 }
 section.meet-our-team .container .team-box .member-card .member {
   position: absolute;
-  height: 88%;
+  height: 85%;
   width: 72%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 section.meet-our-team .container .team-box .member-card .member .member-image {
-  height: 80%;
+  height: 75%;
   width: 100%;
   border-radius: 5px;
   overflow: hidden;
