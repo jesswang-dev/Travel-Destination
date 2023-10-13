@@ -1,7 +1,7 @@
 //script to change index background
 //header scrolling effect
 const header = document.querySelector(".header-scroll");
-const logo = document.querySelector(".nav-header");
+const logo = document.querySelector(".nav-header a");
 const navBar = document.querySelector(".navigation");
 const optionBtn = document.querySelector(".option-btn");
 const leftScroll = document.querySelector(".scroll-bar");
@@ -10,7 +10,7 @@ const movable = document.querySelector(".movable");
 window.addEventListener("scroll", (e) => {
   const n = document.documentElement.scrollTop;
 
-  console.log(n);
+  // console.log(n);
 
   //effect for left scrolling bar
   const distance = leftScroll.offsetHeight - movable.offsetHeight;
@@ -155,3 +155,17 @@ for (let i = 0; i < locationCard.length; i++) {
 }
 
 //effect of background images
+const contactCard = document.querySelectorAll(".contact");
+for (let i = 0; i < contactCard.length; i++) {
+  contactCard[i].addEventListener("mouseenter", (e) => {
+    e.target.classList.add("active");
+  });
+  contactCard[i].addEventListener("mouseleave", (e) => {
+    e.target.classList.remove("active");
+  });
+}
+
+const formSubmit = (e) => {
+  e.preventDefault();
+
+}

@@ -162,9 +162,9 @@ div.left-scroll .social-account ul .social-icon:hover {
   grid-column: 2/3;
   display: grid;
   grid-template-columns: 600px 400px;
+  column-gap: 80px;
   margin: auto;
   padding-left: 80px;
-  padding-right: 80px;
 }
 .index-title h1 {
   font-size: 64px;
@@ -183,6 +183,7 @@ div.left-scroll .social-account ul .social-icon:hover {
   align-self: center;
 }
 .video-section {
+  justify-self: end;
   width: 400px;
   height: 400px;
   border-radius: 50%;
@@ -1348,7 +1349,7 @@ section.detailed-info .box.active {
 }
 section.about-gallery {
   width: 100vw;
-  height: 90vh;
+  height: 100vh;
 }
 section.about-gallery .container {
   width: 95vw;
@@ -1397,22 +1398,40 @@ section.about-gallery .container .gallery .item img {
   height: 100%;
 }
 section.meet-our-team {
-  height: 90vh;
-  width: 90vw;
+  height: 100vh;
+  width: 95vw;
   margin-left: 80px;
   color: #081c3a;
   background-color: #f7f8fc;
 }
 section.meet-our-team .container {
   height: 100%;
-  max-width: 92%;
+  max-width: 90%;
   margin: auto;
   padding-top: 100px;
 }
 section.meet-our-team .container .title {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-bottom: 30px;
+}
+section.meet-our-team .container .title .subtitle {
+  margin-bottom: 0;
+}
+section.meet-our-team .container .title .deco-line {
+  width: 60%;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+section.meet-our-team .container .title .option-btn {
+  padding: 10px 15px;
+  border-radius: 2px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+section.meet-our-team .container .title .option-btn:hover {
+  color: #fff;
+  background-color: #081c3a;
 }
 section.meet-our-team .container .team-box {
   height: 450px;
@@ -1439,14 +1458,14 @@ section.meet-our-team .container .team-box .member-card:hover {
 }
 section.meet-our-team .container .team-box .member-card .member {
   position: absolute;
-  height: 85%;
-  width: 72%;
+  height: 93%;
+  width: 90%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 section.meet-our-team .container .team-box .member-card .member .member-image {
-  height: 75%;
+  height: 80%;
   width: 100%;
   border-radius: 5px;
   overflow: hidden;
@@ -1472,7 +1491,7 @@ section.meet-our-team .container .team-box .member-card .member .member-location
 }
 section.article-post {
   height: 100vh;
-  width: 90vw;
+  width: 95vw;
   margin-left: 80px;
   color: #081c3a;
 }
@@ -1480,7 +1499,7 @@ section.article-post .container {
   transform: translateY(-70px);
   position: relative;
   height: 100%;
-  max-width: 92%;
+  max-width: 90%;
   margin: auto;
   background-color: #fff;
   border-radius: 5px;
@@ -1517,7 +1536,7 @@ section.article-post .container .blog-container .feature-post .feature-post-imag
 }
 section.article-post .container .blog-container .feature-post .feature-post-brief {
   transform: translateY(-80%) translateX(5%);
-  height: 350px;
+  height: 300px;
   width: 90%;
   background-color: #fff;
   border-radius: 15px;
