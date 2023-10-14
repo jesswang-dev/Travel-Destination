@@ -274,7 +274,6 @@ feature.addEventListener("mouseleave", (e) => {
   e.target.classList.remove("active");
 });
 
-
 const tesBtnLeft = document.querySelector("#tes-left");
 const tesBtnRight = document.querySelector("#tes-right");
 const testimony = document.querySelectorAll(".testimony-text");
@@ -421,45 +420,69 @@ popularCountryData.set(3, indonesiaData);
 popularCountryData.set(4, franceData);
 
 console.log(popularCountryData);
-const activeBar = document.querySelector(".the-bar");
-const tabDots = document.querySelector(".tab-dots");
-const innerDots = document.querySelector(".inner-dots");
-const innerDotsList = document.querySelectorAll(".dot");
+// const activeBar = document.querySelector(".the-bar");
+// const tabDots = document.querySelector(".tab-dots");
+// const innerDots = document.querySelector(".inner-dots");
+// const innerDotsList = document.querySelectorAll(".dot");
+
+// const tabTitles = document.querySelectorAll(".tab-title");
+
+// tabDots.addEventListener("click", (e) => {
+//   if (e.target.tagName === "LI") {
+//     const current = Number(e.target.dataset.index);
+//     const tabDotsList = tabDots.children;
+
+//     for (let i = 0; i < tabDotsList.length; i++) {
+//       tabDotsList[i].classList.remove("active");
+//       pageList[i].classList.remove("active");
+//       tabTitles[i].classList.remove("active");
+//     }
+
+//     e.target.classList.add("active");
+//     pageList[current - 1].classList.add("active");
+//     tabTitles[current - 1].classList.add("active");
+
+//     for (let i = 0; i < innerDotsList.length; i++) {
+//       if (current && innerDotsList[i].dataset.index > current) {
+//         innerDotsList[i].classList.remove("active");
+//       } else {
+//         innerDotsList[i].classList.add("active");
+//       }
+//     }
+
+//     activeBar.style.backgroundImage = changeBarBkgColor(current);
+//   }
+// });
+
+// function changeBarBkgColor(eventIndex) {
+//   return `linear-gradient(to right, black 0 ${
+//     25 * eventIndex
+//   }%, rgba(0, 0, 0, 0.1) ${eventIndex}% 100%)`;
+// }
+
+const tabmenu = document.querySelector(".click-bar");
+const targets = document.querySelectorAll(".click-bar .tab-item");
+const line = document.querySelector(".click-bar .line");
 const pageList = document.querySelectorAll(".page");
-const tabTitles = document.querySelectorAll(".tab-title");
 
-tabDots.addEventListener("click", (e) => {
-  if (e.target.tagName === "LI") {
-    const current = Number(e.target.dataset.index);
-    const tabDotsList = tabDots.children;
-
-    for (let i = 0; i < tabDotsList.length; i++) {
-      tabDotsList[i].classList.remove("active");
+tabmenu.addEventListener("click", function (e) {
+  const id = e.target.dataset.index;
+  if (id) {
+    for (let i = 0; i < targets.length; i++) {
+      targets[i].classList.remove("active");
       pageList[i].classList.remove("active");
-      tabTitles[i].classList.remove("active");
+      targets[i].classList.remove("selected");
     }
-
-    e.target.classList.add("active");
-    pageList[current - 1].classList.add("active");
-    tabTitles[current - 1].classList.add("active");
-
-    for (let i = 0; i < innerDotsList.length; i++) {
-      if (current && innerDotsList[i].dataset.index > current) {
-        innerDotsList[i].classList.remove("active");
-      } else {
-        innerDotsList[i].classList.add("active");
-      }
-    }
-
-    activeBar.style.backgroundImage = changeBarBkgColor(current);
   }
-});
 
-function changeBarBkgColor(eventIndex) {
-  return `linear-gradient(to right, black 0 ${
-    25 * eventIndex
-  }%, rgba(0, 0, 0, 0.1) ${eventIndex}% 100%)`;
-}
+  for (let i = 0; i <= Number(id); i++) {
+    targets[i].classList.add("selected");
+  }
+
+  targets[id].classList.add("active");
+  line.style.width = `${(1 + Number(id)) * 25}%`;
+  pageList[id].classList.add("active");
+});
 
 const outers = document.querySelectorAll(".outer");
 const inners = document.querySelectorAll(".inner");
@@ -490,7 +513,9 @@ window.addEventListener("scroll", function (e) {
 });
 
 const aboutBox = document.querySelector(".gallery");
+const itemBoxList = document.querySelectorAll(".gallery .item");
 const lastBox = document.querySelector(".gallery .item:last-child");
+// console.log("itemBoxList", itemBoxList);
 // console.log(lastBox.offsetLeft);
 // console.log(window.innerWidth);
 aboutBox.addEventListener("mousemove", function (e) {
@@ -499,4 +524,62 @@ aboutBox.addEventListener("mousemove", function (e) {
   } else {
     aboutBox.style.marginLeft = "-900px";
   }
+});
+
+for (let i = 0; i < itemBoxList.length; i++) {
+  itemBoxList[i].addEventListener("mouseenter", (e) => {
+    e.target.classList.add("active");
+  });
+  itemBoxList[i].addEventListener("click", () => {});
+  itemBoxList[i].addEventListener("mouseleave", (e) => {
+    e.target.classList.remove("active");
+  });
+}
+
+let imageItems = document.querySelectorAll(".background-image");
+// console.log(imageItems);
+//the section
+const galleryPage = document.querySelector(".gallery-swiper");
+//the swiper
+let gallery_swiper = document.querySelector(".gallerySwiper");
+
+for (let i = 0; i < imageItems.length; i++) {
+  imageItems[i].addEventListener("mouseenter", () => {
+    imageItems[i].classList.add("active");
+  });
+  imageItems[i].addEventListener("mouseleave", () => {
+    imageItems[i].classList.remove("active");
+  });
+
+  imageItems[i].addEventListener("click", () => {
+    galleryPage.style.display = "block";
+
+    //get the list of pagination bullet
+    const swiperPaginationBullet = document.querySelectorAll(
+      ".swiper-pagination-bullet"
+    );
+
+    let swiperSlide = document.querySelectorAll(".swiper-slide");
+    gallerySwiper.slideTo(i);
+    for (let j = 0; j < swiperPaginationBullet.length; j++) {
+      if (
+        Array.from(swiperPaginationBullet[j].classList).includes(
+          "swiper-pagination-bullet-active"
+        )
+      ) {
+        swiperPaginationBullet[j].classList.remove(
+          "swiper-pagination-bullet-active"
+        );
+        swiperPaginationBullet[i].classList.add(
+          "swiper-pagination-bullet-active"
+        );
+      }
+    }
+  });
+}
+
+const closeBtn = document.querySelector(".close-btn");
+closeBtn.addEventListener("click", function () {
+  galleryPage.style.display = "none";
+  // window.scrollTo(0, 6000);
 });

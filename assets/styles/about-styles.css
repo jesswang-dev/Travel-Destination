@@ -481,7 +481,7 @@ section.no-paddings .no-padding-container .titles p {
   font-weight: 300;
 }
 section.meet-our-team {
-  height: 50vh;
+  height: 70vh;
   width: 95vw;
   margin-left: 80px;
   color: #081c3a;
@@ -489,13 +489,36 @@ section.meet-our-team {
 }
 section.meet-our-team .container {
   height: 100%;
-  max-width: 80%;
-  margin: auto;
+  max-width: 90%;
+  margin: 0 auto;
   padding-top: 100px;
   transform: translateY(-150px);
 }
+section.meet-our-team .container .title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+section.meet-our-team .container .title .subtitle {
+  margin-bottom: 0;
+}
+section.meet-our-team .container .title .deco-line {
+  width: 60%;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+section.meet-our-team .container .title .option-btn {
+  padding: 10px 15px;
+  border-radius: 2px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+section.meet-our-team .container .title .option-btn:hover {
+  color: #fff;
+  background-color: #081c3a;
+}
 section.meet-our-team .container .team-box {
-  height: 480px;
+  height: 450px;
   width: 100%;
   margin: auto;
   background-color: #fff;
@@ -519,8 +542,8 @@ section.meet-our-team .container .team-box .member-card:hover {
 }
 section.meet-our-team .container .team-box .member-card .member {
   position: absolute;
-  height: 88%;
-  width: 72%;
+  height: 93%;
+  width: 90%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
