@@ -169,3 +169,21 @@ const formSubmit = (e) => {
   e.preventDefault();
 
 }
+
+//effect of parallax scrolling
+
+// const galleryPic = document.querySelectorAll(".mission .gallery .picture");
+// const galleryBox = document.querySelector(".mission .gallery");
+// console.log(galleryPic[0].style.backgroundSize);
+// window.addEventListener("scroll", (e) => {
+//   const n = document.documentElement.scrollTop;
+//   if(n > 800 && n < 2000) {
+//     console.log("window.scrollY", window.scrollY);
+//     for(let i = 0; i < galleryPic.length; i++) {
+//       const x = Math.ceil((window.scrollY % 100) / 10);
+//       console.log('x',x)
+//       galleryPic[i].style.backgroundSize = `auto ${120 + x}%`;
+
+//     }
+//   }
+// })

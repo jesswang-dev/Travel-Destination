@@ -309,15 +309,16 @@ div.left-scroll .social-account ul .social-icon:hover {
   font-size: 38px;
 }
 section.blog {
-  width: 100vw;
-  height: 60vh;
+  width: 90vw;
+  height: 70vh;
+  margin-left: 80px;
   color: #081c3a;
   text-align: left;
 }
 section.blog .blog-info {
   background-color: #fff;
   transform: translateY(-50px);
-  max-width: 70%;
+  max-width: 92%;
   height: 100%;
   margin: auto;
   border-radius: 5px;
@@ -338,7 +339,7 @@ section.blog .blog-info .blog-container .subtitle {
 section.blog .blog-info .blog-container .blog-content {
   display: flex;
   justify-content: space-between;
-  margin-top: 100px;
+  margin-top: 80px;
 }
 section.blog .blog-info .blog-container .blog-content .blog-left {
   width: 480px;
@@ -364,6 +365,7 @@ section.blog .blog-info .blog-container .blog-content .blog-left .option-btn {
   border-radius: 8px;
   color: #f7f8fc;
   background-color: #3572ff;
+  cursor: pointer;
 }
 section.blog .blog-info .blog-container .blog-content .blog-right {
   width: 50%;
@@ -388,9 +390,9 @@ section.mission .mission-container {
 }
 section.mission .mission-container .mission-text {
   padding-top: 120px;
-  width: 50%;
+  width: 70%;
   height: 30%;
-  margin: auto;
+  margin: 0 auto;
 }
 section.mission .mission-container .mission-text h2 {
   font-size: 48px;
@@ -415,6 +417,7 @@ section.mission .mission-container .gallery .picture {
   border-radius: 5px;
   background-size: cover;
   background-position: center;
+  overflow: hidden;
 }
 section.mission .mission-container .gallery :first-child {
   background-image: url(../about-page/gallery/picture1.jpg);
