@@ -1439,6 +1439,7 @@ section.about-gallery .container .gallery .item {
   align-items: fit;
   position: relative;
   transition: all 0.8s ease;
+  cursor: pointer;
 }
 section.about-gallery .container .gallery .item .background-image {
   height: 100%;
@@ -1879,6 +1880,7 @@ section.gallery-swiper {
   width: 60%;
   height: 100%;
   object-fit: cover;
+  cursor: pointer;
 }
 .gallerySwiper .swiper-pagination-bullet {
   width: 10vh;
