@@ -45,7 +45,7 @@ nav.header {
   position: fixed;
   display: grid;
   grid-template-columns: 80px 150px auto 200px 150px;
-  z-index: 990;
+  z-index: 999;
 }
 nav.header .menu-btn {
   grid-column-start: 1;
@@ -110,7 +110,7 @@ div.left-scroll {
   position: fixed;
   display: grid;
   grid-template-rows: 120px auto 120px;
-  z-index: 999;
+  z-index: 998;
 }
 div.left-scroll .scroll-bar {
   grid-row-start: 2;
@@ -161,8 +161,8 @@ div.left-scroll .social-account ul .social-icon:hover {
   grid-row: 2/3;
   grid-column: 2/3;
   display: grid;
-  grid-template-columns: 600px 400px;
-  column-gap: 80px;
+  grid-template-columns: 600px 500px;
+  column-gap: 100px;
   margin: auto;
   padding-left: 80px;
 }
@@ -376,7 +376,7 @@ div.left-scroll .social-account ul .social-icon:hover {
   position: fixed;
   text-align: center;
   left: -40vw;
-  z-index: 998;
+  z-index: 999;
   transition: all 1s ease;
 }
 .expand-menu .exit-btn {
